@@ -53,19 +53,32 @@
   @media (max-width:760px){ section{padding:64px 0;} }
 
   /* ---------- Buttons ---------- */
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    padding:13px 24px;
-    border-radius:999px;
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:600;
-    font-size:15px;
-    border:1.5px solid transparent;
-    cursor:pointer;
-    transition:transform .15s ease, background .2s ease, border-color .2s ease;
-    white-space:nowrap;
-  }
-  .btn:hover{transform:translateY(-1px);}
+  /* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  white-space: nowrap;
+}
+.btn svg {
+  transition: transform 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(229, 50, 42, 0.2);
+}
+.btn:hover svg {
+  transform: translateX(4px);
+}
   .btn-primary{background:var(--red);color:#fff;}
   .btn-primary:hover{background:var(--red-dark);}
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
@@ -361,7 +374,12 @@
     <nav class="nav-links">
       <a href="#how-it-works">How it Works</a>
       <a href="#faq">FAQ</a>
-      <a href="#get-started" class="btn btn-primary">Get Started</a>
+      <a href="#get-started" class="btn btn-primary">
+  Get Started 
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin: 0;">
+    <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</a>
     </nav>
   </div>
 </header>
