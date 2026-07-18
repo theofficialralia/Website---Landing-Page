@@ -136,13 +136,22 @@
     gap: 40px;
     align-items: center;
   }
-  @media (max-width:900px){ 
+ @media (max-width:900px){ 
     .hero { 
-      padding: 56px 0 24px; 
-      background-position: center top !important; /* Shifts focal point up for mobile view */
-      background-size: contain !important; /* Optional: forces the entire image to fit, but may leave blank space above/below */
+      padding: 64px 0 32px; 
+      background-position: center center !important; 
+      background-size: cover !important; /* Prevents landscape stretching */
     }
-    .hero-content { grid-template-columns: 1fr; } 
+    .hero-content { 
+      grid-template-columns: 1fr; 
+      text-align: center; /* Centers text for a cleaner look on mobile */
+    }
+    .hero-ctas {
+      justify-content: center; /* Centers the buttons */
+    }
+    .audience-chips {
+      justify-content: center; /* Centers the chips */
+    }
   }
   .hero h1 em{color:var(--red);font-style:normal;}
   .hero p.lede{font-size:18px;color:var(--muted);max-width:480px;margin-bottom:32px;}
