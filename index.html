@@ -748,69 +748,78 @@ details.faq-item p {
 
   <!-- FAQ -->
   <section class="wrap reveal" id="faq">
-    <div class="section-head">
-      <span class="eyebrow">FAQ</span>
-      <h2>Questions, answered.</h2>
-    </div>
+  <div class="section-head">
+    <span class="eyebrow">FAQ</span>
+    <h2>Questions, answered.</h2>
+  </div>
 
-    <div class="faq-tabs">
-        <button class="faq-tab-btn active" onclick="switchFaqTab('general')">General</button>
-        <button class="faq-tab-btn" onclick="switchFaqTab('promoters')">For Promoters</button>
-        <button class="faq-tab-btn" onclick="switchFaqTab('creators')">For Campaign Creators</button>
-      </div>
+  <!-- Side-by-Side Tab Buttons -->
+  <div class="faq-tabs" style="display: flex; gap: 12px; margin-bottom: 32px; border-bottom: 2px solid var(--line); padding-bottom: 12px; flex-wrap: wrap;">
+    <button class="faq-tab-btn active" onclick="switchFaqTab('general')">General</button>
+    <button class="faq-tab-btn" onclick="switchFaqTab('promoters')">For Promoters</button>
+    <button class="faq-tab-btn" onclick="switchFaqTab('creators')">For Campaign Creators</button>
+  </div>
 
-      <!-- General FAQ Content Group -->
-      <div id="faq-general" class="faq-group-content active">
-        <details class="faq-item" open>
-          <summary>What is Ralia?<span class="icon"></span></summary>
-          <p>Ralia is a digital platform that connects organizations and brands looking for growth with promoters who share campaigns to drive visibility and engagement.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is Ralia just for high-level social media influencers?<span class="icon"></span></summary>
-          <p>No. While we work with social media creators, Ralia focuses on real-world reach. Our network consists of real people who build genuine trust through direct digital sharing, physical community campaigns, and event participation.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Who can create a campaign on Ralia?<span class="icon"></span></summary>
-          <p>Anyone looking to spread the word about a project can use Ralia. This includes corporate businesses, tech startups, event organizers hosting conferences, and religious organizations or pastors promoting church programs.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How do I contact Ralia?<span class="icon"></span></summary>
-          <p>For general inquiries, partnerships, or questions, email us at hello@ralia.co. For account issues or technical assistance, reach out to support@ralia.co.</p>
-        </details>
-      </div>
+  <!-- General FAQ Content Group -->
+  <div id="faq-general" class="faq-group-content active">
+    <details class="faq-item" open>
+      <summary>What is Ralia?<span class="icon"></span></summary>
+      <p>Ralia is a digital platform that connects organizations and brands looking for growth with promoters who share campaigns to drive visibility and engagement.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is Ralia just for high-level social media influencers?<span class="icon"></span></summary>
+      <p>No. While we work with social media creators, Ralia focuses on real-world reach. Our network consists of real people who build genuine trust through direct digital sharing, physical community campaigns, and event participation.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Who can create a campaign on Ralia?<span class="icon"></span></summary>
+      <p>Anyone looking to spread the word about a project can use Ralia. This includes corporate businesses, tech startups, event organizers hosting conferences, and religious organizations or pastors promoting church programs.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do I contact Ralia?<span class="icon"></span></summary>
+      <p>For general inquiries, partnerships, or questions, email us at hello@ralia.co. For account issues or technical assistance, reach out to support@ralia.co.</p>
+    </details>
+  </div>
 
-      <!-- Promoters FAQ Content Group -->
-      <div id="faq-promoters" class="faq-group-content">
-        <details class="faq-item">
-          <summary>How do I earn on Ralia?<span class="icon"></span></summary>
-          <p>You earn financial rewards by selecting available campaigns, sharing them with your audience, or participating in specific campaign activities.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do I need thousands of followers to join?<span class="icon"></span></summary>
-          <p>Absolutely not. Ralia values genuine connections. Whether you share via WhatsApp, word-of-mouth, local community groups, or your personal social media profiles, your reach matters.</p>
-        </details>
-        <details class="faq-item">
-          <summary>When and how do I get paid?<span class="icon"></span></summary>
-          <p>Earnings are tracked directly within your dashboard. Once a campaign milestone is verified, payouts are processed securely according to the campaign terms.</p>
-        </details>
-      </div>
+  <!-- Promoters FAQ Content Group -->
+  <div id="faq-promoters" class="faq-group-content" style="display: none;">
+    <details class="faq-item">
+      <summary>How do I earn on Ralia?<span class="icon"></span></summary>
+      <p>You earn financial rewards by selecting available campaigns, sharing them with your audience, or participating in specific campaign activities.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need thousands of social media followers to join as a promoter?<span class="icon"></span></summary>
+      <p>No. We value genuine influence and real-world trust over follower counts. If you can mobilize your local community, friends, colleagues, or physical network, you're welcome to promote on Ralia.</p>
+    </details>
+    <details class="faq-item">
+      <summary>When and how do I get paid?<span class="icon"></span></summary>
+      <p>Payouts are processed directly to your linked bank account every Friday, once campaign conditions are successfully met and verified.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Are there any fees to join as a promoter?<span class="icon"></span></summary>
+      <p>No. Joining Ralia and browsing available campaigns is completely free for all promoters.</p>
+    </details>
+  </div>
 
-      <!-- Creators FAQ Content Group -->
-      <div id="faq-creators" class="faq-group-content">
-        <details class="faq-item">
-          <summary>What kind of campaigns can I run?<span class="icon"></span></summary>
-          <p>You can run digital amplification campaigns (link sharing, social posts), physical community mobilization, or event attendance drives.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How does Ralia ensure quality and prevent fraud?<span class="icon"></span></summary>
-          <p>We use a combination of automated verification metrics and manual review to ensure campaigns are shared authentically by real people within target communities.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How do I get started as a creator?<span class="icon"></span></summary>
-          <p>Click the "Launch a Campaign" button to fill out our onboarding form. Our team will review your requirements and help set up your first target framework.</p>
-        </details>
-      </div>
-  </section>
+  <!-- Creators FAQ Content Group -->
+  <div id="faq-creators" class="faq-group-content" style="display: none;">
+    <details class="faq-item">
+      <summary>What types of campaigns can I run on Ralia?<span class="icon"></span></summary>
+      <p>We offer highly efficient, trust-driven campaigns including targeted digital promotion, experiential event participation, and localized door-to-door or community campaigns that reach real, verified users.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do I launch a campaign?<span class="icon"></span></summary>
+      <p>Create an organizer profile, fund your campaign wallet, set your promotional requirements such as budget, targets, and assets, and launch it to our network.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is there a minimum budget required?<span class="icon"></span></summary>
+      <p>Ralia is built to be scalable. You can set a budget that fits your goals, whether it's a large-scale product launch or a localized event promotion.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How does Ralia ensure campaign quality?<span class="icon"></span></summary>
+      <p>We use internal verification metrics to track promoter engagement and ensure your materials are distributed authentically, according to your campaign rules.</p>
+    </details>
+  </div>
+</section>
 
   <!-- CTA -->
   <section id="get-started" style="padding-bottom:0;">
