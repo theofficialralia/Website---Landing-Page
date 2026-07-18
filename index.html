@@ -580,6 +580,43 @@ details.faq-item p {
 .faq-group-content.active {
   display: block;
 }
+  /* Floating Feedback Button */
+.floating-feedback {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF !important;
+  background: #171412;
+  border: 3px solid #171412;
+  padding: 10px 18px;
+  border-radius: 999px;
+  box-shadow: 4px 4px 0px var(--red);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.floating-feedback:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--red);
+}
+.floating-feedback:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px var(--red);
+}
+@media (max-width: 600px) {
+  .floating-feedback {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
   /* Scroll Animation Styles */
 .reveal {
   opacity: 0;
@@ -966,5 +1003,10 @@ details.faq-item p {
       }
     };
   </script>
+  <!-- Floating Feedback Trigger -->
+<a href="YOUR_TYPEFORM_OR_GOOGLE_FORM_URL" target="_blank" class="floating-feedback" aria-label="Give Feedback">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  Feedback
+</a>
 </body>
 </html>
