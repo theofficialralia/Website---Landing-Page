@@ -544,6 +544,16 @@ details.faq-item p {
   .foot-bottom .social-icons a{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;}
   .foot-bottom .social-icons a:hover{border-color:var(--red);}
   .foot-bottom .social-icons svg{width:16px;height:16px;}
+  /* Scroll Animation Styles */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 <body>
@@ -617,7 +627,7 @@ details.faq-item p {
 </div>
 
   <!-- HOW IT WORKS -->
-  <section class="wrap" id="how-it-works">
+  <section class="wrap reveal" id="how-it-works">
     <div class="section-head">
       <span class="eyebrow">How it works</span>
     </div>
@@ -658,7 +668,7 @@ details.faq-item p {
   </section>
 
   <!-- TESTIMONIAL -->
-  <section class="testimonial">
+  <section class="testimonial reveal">
     <div class="wrap">
       <div class="mark">"</div>
       <p class="quote">The gallery is the thing. We ran ₦180,000 through Ralia and I could point at every screenshot. My board approved next quarter's budget from that grid alone.</p>
@@ -701,7 +711,7 @@ details.faq-item p {
   </section>
 
   <!-- FAQ -->
-  <section class="wrap" id="faq">
+  <section class="wrap reveal" id="faq">
     <div class="section-head">
       <span class="eyebrow">FAQ</span>
       <h2>Questions, answered.</h2>
@@ -886,7 +896,17 @@ details.faq-item p {
       });
     }); 
   
-  
+  // Scroll Reveal Engine
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(element => revealObserver.observe(element));
   window.addEventListener('DOMContentLoaded', () => {
       animateCounter('counter-promoters', 4562, 4000); // Counts to 4,562 over 2 seconds
       animateCounter('counter-owners', 300, 3500);     // Counts to 300 over 1.5 seconds
