@@ -164,7 +164,34 @@
     display:flex;align-items:center;gap:7px;
   }
   .chip .dot{width:6px;height:6px;border-radius:50%;background:var(--green);}
-
+/* ---------- News Ticker Marquee ---------- */
+  .ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(23, 20, 18, 0.75); /* Dark semi-transparent backing makes text super readable */
+    backdrop-filter: blur(5px);
+    border-radius: 999px;
+    padding: 10px 0;
+    margin-top: 28px;
+  }
+  .ticker {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    gap: 40px;
+    padding-left: 20px;
+    animation: marquee 15s linear infinite;
+  }
+  .ticker .chip {
+    border: none;
+    padding: 0;
+    color: #FFFFFF; /* High contrast white text */
+    font-size: 14px;
+  }
+  @keyframes marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); } /* Seamlessly loops back halfway */
+  }
   /* Reach visual */
   .reach{
     position:relative;aspect-ratio:1/1;max-width:440px;margin:0 auto;
