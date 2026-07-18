@@ -550,7 +550,7 @@ details.faq-item p {
 
 <header class="nav" id="top">
   <div class="nav-inner">
-    <a class="logo" href="#top" aria-label="Ralia home">
+    <a class="logo" href="javascript:void(0);" data-target="top" aria-label="Ralia home">
   <img src="Ralia Logo.jpeg" alt="Ralia Logo" style="width: 30px; height: 30px; object-fit: contain; margin-right: 10px;">
   Ralia
 </a>
@@ -848,8 +848,8 @@ details.faq-item p {
       requestAnimationFrame(update);
     }
 
-  // Smooth scroll to sections without adding the '#' to the URL
-    document.querySelectorAll('.nav-links a[data-target]').forEach(link => {
+// Smooth scroll to sections without adding the '#' to the URL
+    document.querySelectorAll('[data-target]').forEach(link => {
       link.addEventListener('click', (e) => {
         const targetId = link.getAttribute('data-target');
         const targetElement = document.getElementById(targetId);
@@ -861,7 +861,7 @@ details.faq-item p {
           });
         }
       });
-    });  
+    }); 
   
   
   window.addEventListener('DOMContentLoaded', () => {
