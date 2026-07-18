@@ -414,14 +414,15 @@
   </section>
 
   <!-- STRIP -->
-  <div class="strip">
-    <div class="wrap">
-      <div class="item"><b>4,562+</b><span>people already in the network</span></div>
-      <div class="item"><b>Every Friday</b><span>promoter payouts</span></div>
-      <div class="item"><b>Free</b><span>to join as a promoter</span></div>
-      <div class="item"><b>Any budget</b><span>campaigns scale to fit</span></div>
-    </div>
+ <!-- STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="item"><b id="counter-promoters">0</b><span>dedicated promoters already in the network</span></div>
+    <div class="item"><b id="counter-owners">0</b><span>campaign owners growing their reach</span></div>
+    <div class="item"><b>Every Friday</b><span>promoter payouts</span></div>
+    <div class="item"><b>Free</b><span>to join as a promoter</span></div>
   </div>
+</div>
 
   <!-- HOW IT WORKS -->
   <section class="wrap" id="how-it-works">
@@ -634,6 +635,32 @@
     </div>
   </div>
 </footer>
+<script>
+    function animateCounter(id, target, duration) {
+      const element = document.getElementById(id);
+      const startTime = performance.now();
 
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function to make it slow down smoothly right before stopping
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.floor(easeOut * target);
+        
+        element.textContent = currentValue.toLocaleString() + "+";
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      requestAnimationFrame(update);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      animateCounter('counter-promoters', 4562, 2000); // Counts to 4,562 over 2 seconds
+      animateCounter('counter-owners', 300, 1500);     // Counts to 300 over 1.5 seconds
+    });
+  </script>
 </body>
 </html>
