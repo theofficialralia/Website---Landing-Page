@@ -494,23 +494,25 @@ details.faq-item summary .icon::after {
   content: "";
   position: absolute;
   background: #FFFFFF;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 details.faq-item summary .icon::before {
   width: 12px;
   height: 2.5px;
+  top: calc(50% - 1.25px);
+  left: calc(50% - 6px);
 }
 details.faq-item summary .icon::after {
   width: 2.5px;
   height: 12px;
+  top: calc(50% - 6px);
+  left: calc(50% - 1.25px);
+  transition: transform 0.2s ease;
 }
 details.faq-item[open] summary .icon {
   background: var(--red); /* Switches to red when expanded */
 }
 details.faq-item[open] summary .icon::after {
-  transform: translate(-50%, -50%) rotate(90deg) scale(0);
+  transform: rotate(90deg) scale(0);
 }
 details.faq-item p {
   margin: 16px 0 0;
