@@ -137,7 +137,11 @@
     align-items: center;
   }
   @media (max-width:900px){ 
-    .hero { padding: 56px 0 24px; }
+    .hero { 
+      padding: 56px 0 24px; 
+      background-position: center top !important; /* Shifts focal point up for mobile view */
+      background-size: contain !important; /* Optional: forces the entire image to fit, but may leave blank space above/below */
+    }
     .hero-content { grid-template-columns: 1fr; } 
   }
   .hero h1 em{color:var(--red);font-style:normal;}
