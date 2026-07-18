@@ -114,13 +114,18 @@
 
   /* ---------- Hero ---------- */
 /* ---------- Hero ---------- */
-  .hero {
+ .hero {
     position: relative;
     padding: 88px 0 40px;
-    background-image: url('Red.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url('Red.png') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
   }
   .hero-content {
     max-width: var(--wrap);
