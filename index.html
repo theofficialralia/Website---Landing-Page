@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ralia — People. Connections. Growth.</title>
+<meta name="description" content="Ralia connects organizations and brands with real people who spread the word — through digital sharing, community networks, and events.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E5322A;
+    --red-dark:#B92620;
+    --green:#2FA84F;
+    --ink:#171412;
+    --paper:#FFFFFF;
+    --mist:#F7F5F2;
+    --line:#EAE6E1;
+    --muted:#6E6862;
+    --radius:14px;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--red);
+  }
+  .muted{color:var(--muted);}
+  section{padding:96px 0;}
+  @media (max-width:760px){ section{padding:64px 0;} }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:13px 24px;
+    border-radius:999px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:15px;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--red);color:#fff;}
+  .btn-primary:hover{background:var(--red-dark);}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-dark{background:var(--ink);color:#fff;}
+  .btn-dark:hover{background:#000;}
+
+  /* ---------- Logo ---------- */
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;}
+  .logo svg{width:30px;height:30px;}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.86);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--wrap);margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-links{display:flex;align-items:center;gap:34px;font-size:15px;font-weight:500;}
+  .nav-links a:not(.btn){color:var(--ink);opacity:.85;}
+  .nav-links a:not(.btn):hover{opacity:1;color:var(--red);}
+  .nav-toggle, .nav-burger{display:none;}
+
+  @media (max-width:780px){
+    .nav-toggle{display:none;}
+    .nav-burger{
+      display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:6px;
+    }
+    .nav-burger span, .nav-burger::before, .nav-burger::after{
+      content:"";display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;
+    }
+    .nav-links{
+      position:absolute;top:64px;left:0;right:0;
+      background:#fff;border-bottom:1px solid var(--line);
+      flex-direction:column;align-items:flex-start;gap:0;
+      max-height:0;overflow:hidden;transition:max-height .28s ease;
+    }
+    .nav-links a:not(.btn){padding:16px 28px;width:100%;border-bottom:1px solid var(--line);opacity:1;}
+    .nav-links .btn{margin:16px 28px;}
+    #nav-toggle:checked ~ .nav-links{max-height:320px;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:88px 0 40px;
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:center;
+  }
+  @media (max-width:900px){ .hero{grid-template-columns:1fr;padding:56px 0 24px;} }
+  .hero h1{
+    font-size:clamp(40px,6vw,68px);
+    line-height:1.03;
+    margin:18px 0 22px;
+  }
+  .hero h1 em{color:var(--red);font-style:normal;}
+  .hero p.lede{font-size:18px;color:var(--muted);max-width:480px;margin-bottom:32px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px;}
+  .audience-chips{display:flex;gap:10px;flex-wrap:wrap;}
+  .chip{
+    font-size:13px;font-weight:500;color:var(--ink);
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+    display:flex;align-items:center;gap:7px;
+  }
+  .chip .dot{width:6px;height:6px;border-radius:50%;background:var(--green);}
+
+  /* Reach visual */
+  .reach{
+    position:relative;aspect-ratio:1/1;max-width:440px;margin:0 auto;
+  }
+  .reach .core{
+    position:absolute;left:14%;top:38%;width:64px;height:64px;
+    background:var(--red);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 30px rgba(229,50,42,.28);
+    z-index:3;
+  }
+  .reach .core span{color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:22px;}
+  .reach .dot{
+    position:absolute;border-radius:50%;background:var(--red);
+    opacity:0;
+    animation:pop .6s ease forwards;
+  }
+  .reach .dot.g{background:var(--green);}
+  @keyframes pop{
+    from{opacity:0;transform:scale(.3);}
+    to{opacity:1;transform:scale(1);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reach .dot{animation:none;opacity:1;}
+  }
+
+  /* ---------- Strip ---------- */
+  .strip{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--mist);
+  }
+  .strip .wrap{
+    display:flex;gap:48px;padding:28px;flex-wrap:wrap;justify-content:space-between;align-items:center;
+  }
+  .strip .item{display:flex;align-items:baseline;gap:8px;}
+  .strip .item b{font-family:'Space Grotesk';font-size:20px;}
+  .strip .item span{color:var(--muted);font-size:14px;}
+
+  /* ---------- How it works ---------- */
+  .section-head{max-width:600px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(28px,4vw,40px);margin-top:12px;}
+  .tracks{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media (max-width:820px){ .tracks{grid-template-columns:1fr;} }
+  .track{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:36px 32px;background:#fff;
+  }
+  .track h3{font-size:22px;margin-bottom:6px;}
+  .track .track-tag{font-size:13px;color:var(--muted);margin-bottom:28px;display:block;}
+  .step{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line);}
+  .step:first-of-type{border-top:none;}
+  .step .num{
+    font-family:'Space Grotesk';font-weight:700;color:var(--red);font-size:14px;
+    width:26px;flex-shrink:0;
+  }
+  .track.creator .step .num{color:var(--green);}
+  .step h4{font-size:15.5px;font-weight:600;margin-bottom:4px;font-family:'Inter';}
+  .step p{margin:0;font-size:14.5px;color:var(--muted);}
+
+  /* ---------- Testimonial ---------- */
+  .testimonial{background:var(--ink);color:#fff;}
+  .testimonial .wrap{max-width:760px;text-align:center;}
+  .testimonial .mark{font-family:'Space Grotesk';font-size:64px;color:var(--red);line-height:1;margin-bottom:8px;}
+  .testimonial p.quote{font-family:'Space Grotesk';font-size:clamp(20px,2.6vw,28px);line-height:1.4;font-weight:500;margin-bottom:26px;}
+  .testimonial .attrib{color:#a7a19b;font-size:14.5px;}
+  .testimonial .attrib b{color:#fff;}
+
+  /* ---------- Social / App ---------- */
+  .social{
+    display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  }
+  @media (max-width:820px){ .social{grid-template-columns:1fr;} }
+  .panel{
+    border:1px solid var(--line);border-radius:var(--radius);padding:36px 32px;
+  }
+  .ig-row{display:flex;align-items:center;gap:14px;margin:20px 0 24px;}
+  .ig-icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#E5332A,#C81A6F 60%,#7A2FBF);display:flex;align-items:center;justify-content:center;}
+  .ig-icon svg{width:24px;height:24px;}
+  .ig-meta b{display:block;font-family:'Space Grotesk';font-size:16px;}
+  .ig-meta span{color:var(--muted);font-size:13.5px;}
+  .app-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;}
+  .app-badge{
+    display:flex;align-items:center;gap:10px;border:1.5px solid var(--ink);border-radius:10px;
+    padding:9px 16px;font-size:13px;
+  }
+  .app-badge .lines span{display:block;}
+  .app-badge .lines .top{font-size:10.5px;color:var(--muted);}
+  .app-badge .lines .bottom{font-family:'Space Grotesk';font-weight:600;font-size:14px;}
+  .app-badge svg{width:20px;height:20px;flex-shrink:0;}
+
+  /* ---------- FAQ ---------- */
+  .faq-group{margin-bottom:38px;}
+  .faq-group h3{
+    font-family:'Space Grotesk';font-size:14px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--red);margin-bottom:14px;
+  }
+  details.faq-item{
+    border-bottom:1px solid var(--line);padding:18px 0;
+  }
+  details.faq-item summary{
+    list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;
+    font-family:'Space Grotesk';font-weight:600;font-size:16.5px;
+  }
+  details.faq-item summary::-webkit-details-marker{display:none;}
+  details.faq-item summary .icon{
+    width:22px;height:22px;flex-shrink:0;border:1.5px solid var(--line);border-radius:50%;
+    position:relative;
+  }
+  details.faq-item summary .icon::before, details.faq-item summary .icon::after{
+    content:"";position:absolute;background:var(--ink);top:50%;left:50%;transform:translate(-50%,-50%);
+  }
+  details.faq-item summary .icon::before{width:10px;height:1.5px;}
+  details.faq-item summary .icon::after{width:1.5px;height:10px;transition:transform .2s ease;}
+  details.faq-item[open] summary .icon::after{transform:translate(-50%,-50%) rotate(90deg) scale(0);}
+  details.faq-item p{margin:14px 0 0;color:var(--muted);font-size:15px;max-width:640px;}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:var(--red);color:#fff;border-radius:24px;
+    padding:64px 48px;text-align:center;
+    margin:0 28px;
+  }
+  @media (max-width:600px){ .cta-band{padding:44px 24px;border-radius:18px;} }
+  .cta-band h2{font-size:clamp(26px,4vw,38px);color:#fff;margin-bottom:14px;}
+  .cta-band p{color:#ffe1de;margin-bottom:30px;}
+  .cta-band .hero-ctas{justify-content:center;}
+  .cta-band .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff;}
+  .cta-band .btn-ghost:hover{border-color:#fff;}
+  .cta-band .btn-dark{background:#fff;color:var(--red);}
+  .cta-band .btn-dark:hover{background:#ffe9e7;}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding-top:64px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;}
+  @media (max-width:760px){ .foot-grid{grid-template-columns:1fr 1fr;} }
+  .foot-grid h5{font-family:'Space Grotesk';font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+  .foot-grid p{color:var(--muted);font-size:14px;max-width:240px;margin:14px 0 0;}
+  .foot-grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:14.5px;}
+  .foot-grid ul a:hover{color:var(--red);}
+  .foot-bottom{
+    border-top:1px solid var(--line);padding:24px 0 32px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-size:13.5px;color:var(--muted);
+  }
+  .foot-bottom .social-icons{display:flex;gap:14px;}
+  .foot-bottom .social-icons a{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .foot-bottom .social-icons a:hover{border-color:var(--red);}
+  .foot-bottom .social-icons svg{width:16px;height:16px;}
+</style>
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a class="logo" href="#top" aria-label="Ralia home">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="8" y="82" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="92" fill="#E5322A">R</text>
+        <circle cx="70" cy="16" r="6" fill="#E5322A"/>
+        <circle cx="86" cy="24" r="5" fill="#E5322A"/>
+        <circle cx="94" cy="38" r="4.5" fill="#E5322A"/>
+        <circle cx="90" cy="54" r="4" fill="#E5322A"/>
+        <circle cx="78" cy="64" r="5.5" fill="#2FA84F"/>
+        <circle cx="55" cy="12" r="4" fill="#E5322A"/>
+        <circle cx="40" cy="8" r="3" fill="#E5322A"/>
+      </svg>
+      Ralia
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-burger" aria-label="Open menu"><span></span></label>
+    <nav class="nav-links">
+      <a href="#how-it-works">How it Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#get-started" class="btn btn-primary">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div>
+      <span class="eyebrow">People. Connections. Growth.</span>
+      <h1>One person can<br>reach <em>thousands.</em></h1>
+      <p class="lede">Ralia connects organizations and brands with real people who spread the word — through direct sharing, community networks, and events. No follower count required.</p>
+      <div class="hero-ctas">
+        <a href="#get-started" class="btn btn-primary">Launch a campaign</a>
+        <a href="#get-started" class="btn btn-ghost">Become a promoter</a>
+      </div>
+      <div class="audience-chips">
+        <span class="chip"><span class="dot"></span>Brands & startups</span>
+        <span class="chip"><span class="dot"></span>Event organizers</span>
+        <span class="chip"><span class="dot"></span>Churches & ministries</span>
+      </div>
+    </div>
+    <div class="reach" aria-hidden="true">
+      <div class="core"><span>R</span></div>
+      <!-- dots scattered fanning up-right from core, staggered -->
+      <div class="dot" style="left:32%; top:30%; width:14px; height:14px; animation-delay:.05s;"></div>
+      <div class="dot" style="left:44%; top:20%; width:11px; height:11px; animation-delay:.12s;"></div>
+      <div class="dot" style="left:56%; top:13%; width:16px; height:16px; animation-delay:.18s;"></div>
+      <div class="dot" style="left:68%; top:10%; width:10px; height:10px; animation-delay:.24s;"></div>
+      <div class="dot" style="left:79%; top:14%; width:13px; height:13px; animation-delay:.3s;"></div>
+      <div class="dot g" style="left:88%; top:23%; width:18px; height:18px; animation-delay:.36s;"></div>
+      <div class="dot" style="left:92%; top:36%; width:12px; height:12px; animation-delay:.42s;"></div>
+      <div class="dot" style="left:90%; top:50%; width:15px; height:15px; animation-delay:.48s;"></div>
+      <div class="dot" style="left:82%; top:62%; width:9px; height:9px; animation-delay:.54s;"></div>
+      <div class="dot" style="left:70%; top:70%; width:13px; height:13px; animation-delay:.6s;"></div>
+      <div class="dot" style="left:56%; top:76%; width:8px; height:8px; animation-delay:.66s;"></div>
+      <div class="dot" style="left:40%; top:80%; width:11px; height:11px; animation-delay:.72s;"></div>
+      <div class="dot" style="left:26%; top:78%; width:7px; height:7px; animation-delay:.78s;"></div>
+      <div class="dot" style="left:60%; top:44%; width:6px; height:6px; animation-delay:.84s;"></div>
+      <div class="dot" style="left:44%; top:56%; width:6px; height:6px; animation-delay:.9s;"></div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <div class="item"><b>4,562+</b><span>people already in the network</span></div>
+      <div class="item"><b>Every Friday</b><span>promoter payouts</span></div>
+      <div class="item"><b>Free</b><span>to join as a promoter</span></div>
+      <div class="item"><b>Any budget</b><span>campaigns scale to fit</span></div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="wrap" id="how-it-works">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Two sides, one network.</h2>
+    </div>
+    <div class="tracks">
+      <div class="track promoter">
+        <span class="track-tag">FOR PROMOTERS</span>
+        <h3>Share what you already believe in.</h3>
+        <div class="step">
+          <span class="num">01</span>
+          <div><h4>Join free</h4><p>Create your promoter profile in minutes — no minimum following required.</p></div>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <div><h4>Pick a campaign</h4><p>Choose from live campaigns that match your community or network.</p></div>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <div><h4>Share & earn</h4><p>Spread the word online or in person, and get paid every Friday once it's verified.</p></div>
+        </div>
+      </div>
+      <div class="track creator">
+        <span class="track-tag">FOR CAMPAIGN CREATORS</span>
+        <h3>Reach real people, verifiably.</h3>
+        <div class="step">
+          <span class="num">01</span>
+          <div><h4>Create your profile</h4><p>Set up as a business, event organizer, or ministry in a few steps.</p></div>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <div><h4>Fund & set targets</h4><p>Load your campaign wallet and define your budget, targets, and assets.</p></div>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <div><h4>Launch to the network</h4><p>Reach real, verified people through digital and physical channels.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="wrap">
+      <div class="mark">"</div>
+      <p class="quote">The gallery is the thing. We ran ₦180,000 through Ralia and I could point at every screenshot. My board approved next quarter's budget from that grid alone.</p>
+      <div class="attrib"><b>Campaign creator</b> · using Ralia</div>
+    </div>
+  </section>
+
+  <!-- SOCIAL + APP -->
+  <section class="wrap">
+    <div class="social">
+      <div class="panel">
+        <span class="eyebrow">On the ground</span>
+        <div class="ig-row">
+          <div class="ig-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" stroke="#fff" stroke-width="1.6"/><circle cx="17.6" cy="6.4" r="1.1" fill="#fff"/></svg>
+          </div>
+          <div class="ig-meta">
+            <b>@ralia.media</b>
+            <span>4,562 followers · growing with real people</span>
+          </div>
+        </div>
+        <a href="https://instagram.com/ralia.media" class="btn btn-ghost">Follow on Instagram</a>
+      </div>
+      <div class="panel">
+        <span class="eyebrow">Get the app</span>
+        <h3 style="font-size:20px;margin-top:10px;">Ralia, in your pocket.</h3>
+        <p class="muted" style="font-size:14.5px;margin-top:8px;">Track campaigns, share links, and get paid — wherever you are.</p>
+        <div class="app-badges">
+          <a href="#" class="app-badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M16.5 12.5c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8-.7 0-1.7-.8-2.9-.8-1.5 0-2.9.9-3.6 2.2-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 2-1.1 2.7-2.2.6-.9.9-1.7 1.1-2.2-2.7-1-2.4-3-2.4-3.6z" fill="#171412"/><path d="M14.6 5.6c.6-.7 1-1.7.9-2.6-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5 1 .1 1.9-.5 2.5-1.2z" fill="#171412"/></svg>
+            <span class="lines"><span class="top">Download on the</span><span class="bottom">App Store</span></span>
+          </a>
+          <a href="#" class="app-badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3.6 2.4v19.2c0 .4.2.7.5.9l10.6-10.5L4.1 1.5c-.3.2-.5.5-.5.9z" fill="#171412"/><path d="M17.9 10.3l-3-1.7-3 3 3 3 3-1.7c.6-.4 1-1 1-1.6 0-.6-.4-1.2-1-1.6z" fill="#171412"/><path d="M11.9 12.6L4.1 20.4c.2.1.4.2.7.2.2 0 .4 0 .6-.1l9.2-5.2-2.7-2.7z" fill="#171412"/><path d="M14.6 9.3L5.4 4.1c-.2-.1-.4-.1-.6-.1-.2 0-.5.1-.7.2l7.8 7.7 2.7-2.6z" fill="#171412"/></svg>
+            <span class="lines"><span class="top">GET IT ON</span><span class="bottom">Google Play</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="wrap" id="faq">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, answered.</h2>
+    </div>
+
+    <div class="faq-group">
+      <h3>General</h3>
+      <details class="faq-item" open>
+        <summary>What is Ralia?<span class="icon"></span></summary>
+        <p>Ralia is a digital platform that connects organizations and brands looking for growth with promoters who share campaigns to drive visibility and engagement.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is Ralia just for high-level social media influencers?<span class="icon"></span></summary>
+        <p>No. While we work with social media creators, Ralia focuses on real-world reach. Our network consists of real people who build genuine trust through direct digital sharing, physical community campaigns, and event participation.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Who can create a campaign on Ralia?<span class="icon"></span></summary>
+        <p>Anyone looking to spread the word about a project can use Ralia. This includes corporate businesses, tech startups, event organizers hosting conferences, and religious organizations or pastors promoting church programs.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I contact Ralia?<span class="icon"></span></summary>
+        <p>For general inquiries, partnerships, or questions, email us at hello@ralia.co. For account issues or technical assistance, reach out to support@ralia.co.</p>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h3>For Promoters</h3>
+      <details class="faq-item">
+        <summary>How do I earn on Ralia?<span class="icon"></span></summary>
+        <p>You earn financial rewards by selecting available campaigns, sharing them with your audience, or participating in specific campaign activities.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need thousands of social media followers to join as a promoter?<span class="icon"></span></summary>
+        <p>No. We value genuine influence and real-world trust over follower counts. If you can mobilize your local community, friends, colleagues, or physical network, you're welcome to promote on Ralia.</p>
+      </details>
+      <details class="faq-item">
+        <summary>When and how do I get paid?<span class="icon"></span></summary>
+        <p>Payouts are processed directly to your linked bank account every Friday, once campaign conditions are successfully met and verified.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are there any fees to join as a promoter?<span class="icon"></span></summary>
+        <p>No. Joining Ralia and browsing available campaigns is completely free for all promoters.</p>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h3>For Campaign Creators</h3>
+      <details class="faq-item">
+        <summary>What types of campaigns can I run on Ralia?<span class="icon"></span></summary>
+        <p>We offer highly efficient, trust-driven campaigns — including targeted digital promotion, experiential event participation, and localized door-to-door or community campaigns that reach real, verified users.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I launch a campaign?<span class="icon"></span></summary>
+        <p>Create an organizer profile, fund your campaign wallet, set your promotional requirements — budget, targets, and assets — and launch it to our network.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a minimum budget required?<span class="icon"></span></summary>
+        <p>Ralia is built to be scalable. You can set a budget that fits your goals, whether it's a large-scale product launch or a localized event promotion.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How does Ralia ensure campaign quality?<span class="icon"></span></summary>
+        <p>We use internal verification metrics to track promoter engagement and ensure your materials are distributed authentically, according to your campaign rules.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="get-started" style="padding-bottom:0;">
+    <div class="cta-band">
+      <h2>Ready to grow?</h2>
+      <p>Start a campaign or start promoting — the network is ready when you are.</p>
+      <div class="hero-ctas">
+        <a href="mailto:hello@ralia.co" class="btn btn-dark">Launch a campaign</a>
+        <a href="mailto:hello@ralia.co" class="btn btn-ghost">Become a promoter</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="8" y="82" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="92" fill="#E5322A">R</text>
+            <circle cx="70" cy="16" r="6" fill="#E5322A"/>
+            <circle cx="86" cy="24" r="5" fill="#E5322A"/>
+            <circle cx="94" cy="38" r="4.5" fill="#E5322A"/>
+            <circle cx="78" cy="64" r="5.5" fill="#2FA84F"/>
+          </svg>
+          Ralia
+        </a>
+        <p>People. Connections. Growth. A network of real people, spreading real word.</p>
+        <p style="margin-top:18px;"><a href="#our-story" style="color:var(--ink);font-weight:600;">Our Story →</a></p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><span class="muted">General inquiries</span><br><a href="mailto:hello@ralia.co">hello@ralia.co</a></li>
+          <li><span class="muted">Support</span><br><a href="mailto:support@ralia.co">support@ralia.co</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#get-started">Get started</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="./terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Ralia. All rights reserved.</span>
+      <div class="social-icons">
+        <a href="https://instagram.com/ralia.media" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#171412" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" stroke="#171412" stroke-width="1.6"/><circle cx="17.6" cy="6.4" r="1.1" fill="#171412"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
