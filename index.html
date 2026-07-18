@@ -165,7 +165,7 @@
   }
   .chip .dot{width:6px;height:6px;border-radius:50%;background:var(--green);}
 /* ---------- News Ticker Marquee ---------- */
- .ticker-wrap {
+.ticker-wrap {
     width: 100vw;
     position: relative;
     left: 50%;
@@ -173,7 +173,7 @@
     margin-left: -50vw;
     margin-right: -50vw;
     overflow: hidden;
-    background: rgba(23, 20, 18, 0.75); /* Dark semi-transparent backing makes text super readable */
+    background: rgba(23, 20, 18, 0.75);
     backdrop-filter: blur(5px);
     padding: 14px 0;
     margin-top: 28px;
@@ -375,17 +375,20 @@
         <span class="eyebrow">People. Connections. Growth.</span>
         <h1>One person can<br>reach <em>thousands.</em></h1>
         <p class="lede">Ralia connects organizations and brands with real people who spread the word — through direct sharing, community networks, and events. No follower count required.</p>
-                <!-- News Ticker Marquee Wrapper -->
+               <!-- News Ticker Marquee Wrapper -->
         <div class="ticker-wrap">
           <div class="ticker">
             <span class="chip"><span class="dot"></span>Brands & startups</span>
             <span class="chip"><span class="dot"></span>Event organizers</span>
             <span class="chip"><span class="dot"></span>Churches & ministries</span>
-            <!-- Duplicated once below to ensure seamless, infinite looping without gaps -->
+            <span class="chip"><span class="dot"></span>Brands & startups</span>
+            <span class="chip"><span class="dot"></span>Event organizers</span>
+            <span class="chip"><span class="dot"></span>Churches & ministries</span>
             <span class="chip"><span class="dot"></span>Brands & startups</span>
             <span class="chip"><span class="dot"></span>Event organizers</span>
             <span class="chip"><span class="dot"></span>Churches & ministries</span>
           </div>
+        </div>
         </div>
       </div>
       <div class="reach" aria-hidden="true">
