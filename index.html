@@ -251,16 +251,52 @@
   }
 
   /* ---------- Strip ---------- */
-  .strip{
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    background:var(--mist);
-  }
-  .strip .wrap{
-    display:flex;gap:48px;padding:28px;flex-wrap:wrap;justify-content:space-between;align-items:center;
-  }
-  .strip .item{display:flex;align-items:baseline;gap:8px;}
-  .strip .item b{font-family:'Space Grotesk';font-size:20px;}
-  .strip .item span{color:var(--muted);font-size:14px;}
+.strip {
+  margin-top: -32px; /* Pulls the bar up to overlap the hero section beautifully */
+  position: relative;
+  z-index: 10;
+}
+.strip .wrap {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 100px; /* Modern pill container style */
+  padding: 20px 40px;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 12px 32px rgba(23, 20, 18, 0.05); /* Premium soft drop shadow */
+}
+@media (max-width: 900px) {
+  .strip { margin-top: 24px; }
+  .strip .wrap { border-radius: 20px; padding: 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+.strip .item {
+  display: flex;
+  flex-direction: column; /* Stacks the number above the text for crisp balance */
+  gap: 2px;
+  flex: 1;
+}
+.strip .item:not(:last-child) {
+  border-right: 1px solid var(--line); /* Clean vertical divider line between metrics */
+  padding-right: 20px;
+}
+@media (max-width: 900px) {
+  .strip .item:not(:last-child) { border-right: none; border-bottom: 1px dashed var(--line); padding-right: 0; padding-bottom: 12px; width: 100%; }
+}
+.strip .item b {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.strip .item span {
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.3;
+}
 
   /* ---------- How it works ---------- */
 .section-head {
