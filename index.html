@@ -314,32 +314,92 @@
   .app-badge .lines .bottom{font-family:'Space Grotesk';font-weight:600;font-size:14px;}
   .app-badge svg{width:20px;height:20px;flex-shrink:0;}
 
-  /* ---------- FAQ ---------- */
-  .faq-group{margin-bottom:38px;}
-  .faq-group h3{
-    font-family:'Space Grotesk';font-size:14px;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--red);margin-bottom:14px;
-  }
-  details.faq-item{
-    border-bottom:1px solid var(--line);padding:18px 0;
-  }
-  details.faq-item summary{
-    list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;
-    font-family:'Space Grotesk';font-weight:600;font-size:16.5px;
-  }
-  details.faq-item summary::-webkit-details-marker{display:none;}
-  details.faq-item summary .icon{
-    width:22px;height:22px;flex-shrink:0;border:1.5px solid var(--line);border-radius:50%;
-    position:relative;
-  }
-  details.faq-item summary .icon::before, details.faq-item summary .icon::after{
-    content:"";position:absolute;background:var(--ink);top:50%;left:50%;transform:translate(-50%,-50%);
-  }
-  details.faq-item summary .icon::before{width:10px;height:1.5px;}
-  details.faq-item summary .icon::after{width:1.5px;height:10px;transition:transform .2s ease;}
-  details.faq-item[open] summary .icon::after{transform:translate(-50%,-50%) rotate(90deg) scale(0);}
-  details.faq-item p{margin:14px 0 0;color:var(--muted);font-size:15px;max-width:640px;}
-
+ /* ---------- FAQ ---------- */
+.faq-group {
+  margin-bottom: 48px;
+}
+.faq-group h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+details.faq-item {
+  background: #FFFFFF;
+  border: 3px solid #171412; /* Thick, clean cartoon outline */
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  /* Crisp comic-book flat shadow effect */
+  box-shadow: 4px 4px 0px #171412; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* When an item is opened, it pushes down like a real button */
+details.faq-item[open] {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #171412;
+  background: #F7F5F2; /* Subtle structural color switch */
+}
+details.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; /* Extra bold text */
+  font-size: 17px;
+  color: #171412;
+}
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+/* Playful circular plus/minus icon */
+details.faq-item summary .icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border: 2.5px solid #171412;
+  background: #2FA84F; /* Vibrant playful green accent */
+  border-radius: 50%;
+  position: relative;
+}
+details.faq-item summary .icon::before,
+details.faq-item summary .icon::after {
+  content: "";
+  position: absolute;
+  background: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+details.faq-item summary .icon::before {
+  width: 12px;
+  height: 2.5px;
+}
+details.faq-item summary .icon::after {
+  width: 2.5px;
+  height: 12px;
+}
+details.faq-item[open] summary .icon {
+  background: var(--red); /* Switches to red when expanded */
+}
+details.faq-item[open] summary .icon::after {
+  transform: translate(-50%, -50%) rotate(90deg) scale(0);
+}
+details.faq-item p {
+  margin: 16px 0 0;
+  color: #171412;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 640px;
+  padding-top: 12px;
+  border-top: 2px dashed #171412; /* Cute dashed divider line inside the card */
+}
   /* ---------- CTA band ---------- */
   .cta-band{
     background:var(--red);color:#fff;border-radius:24px;
