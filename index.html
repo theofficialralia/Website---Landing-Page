@@ -954,6 +954,23 @@ details.faq-item p {
       animateCounter('counter-promoters', 4562, 4000); // Counts to 4,562 over 2 seconds
       animateCounter('counter-owners', 300, 3500);     // Counts to 300 over 1.5 seconds
     });
+  // FAQ Tab Switcher Engine
+    window.switchFaqTab = function(tabId) {
+      document.querySelectorAll('.faq-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.faq-group-content').forEach(content => {
+        content.classList.remove('active');
+        content.style.display = 'none';
+      });
+      
+      const clickedBtn = Array.from(document.querySelectorAll('.faq-tab-btn')).find(btn => btn.getAttribute('onclick').includes(tabId));
+      if (clickedBtn) clickedBtn.classList.add('active');
+      
+      const targetContent = document.getElementById(`faq-${tabId}`);
+      if (targetContent) {
+        targetContent.classList.add('active');
+        targetContent.style.display = 'block';
+      }
+    };
   </script>
 </body>
 </html>
