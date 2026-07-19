@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Ralia: People. Connections. Growth.</title>
+<link rel="icon" type="image/jpeg" href="Ralia Logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E5322A;
+    --red-dark:#B92620;
+    --green:#2FA84F;
+    --ink:#171412;
+    --paper:#FFFFFF;
+    --mist:#F7F5F2;
+    --line:#EAE6E1;
+    --muted:#6E6862;
+    --radius:14px;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4,.display{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--red);
+  }
+  
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.86);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--wrap);margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo img { width: 38px !important; height: 38px !important; margin-top: -4px; margin-bottom: -4px; }
+  .nav-links{display:flex;align-items:center;gap:34px;font-size:15px;font-weight:500;}
+  .nav-links a{color:var(--ink);opacity:.85;}
+  .nav-links a:hover{opacity:1;color:var(--red);}
+
+  /* ---------- Content ---------- */
+  .policy-header {
+    background: var(--mist);
+    padding: 80px 0 60px 0;
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  .policy-header h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-top: 12px;
+    color: var(--ink);
+  }
+  .policy-header p {
+    color: var(--muted);
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  .policy-body {
+    padding: 80px 0;
+  }
+  .policy-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+  }
+  @media (max-width: 900px) {
+    .policy-grid { grid-template-columns: 1fr; gap: 40px; }
+    .policy-sidebar { display: none; }
+  }
+  .policy-sidebar sticky {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sidebar-link {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .sidebar-link:hover { color: var(--red); }
+  
+  .policy-text h2 {
+    font-size: 26px;
+    margin: 40px 0 16px 0;
+    color: var(--ink);
+    border-bottom: 2px dashed var(--line);
+    padding-bottom: 8px;
+  }
+  .policy-text h2:first-of-type { margin-top: 0; }
+  .policy-text h3 {
+    font-size: 18px;
+    margin: 24px 0 12px 0;
+    color: var(--ink);
+  }
+  .policy-text p {
+    color: var(--ink);
+    margin: 0 0 16px 0;
+    font-size: 15.5px;
+    opacity: 0.9;
+  }
+  .policy-text ul {
+    margin: 0 0 24px 0;
+    padding-left: 20px;
+  }
+  .policy-text li {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14.5px;
+  }
+  .legal-table th, .legal-table td {
+    border: 1px solid var(--line);
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .legal-table th {
+    background: var(--mist);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding-top:64px;background:#fff;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;}
+  @media (max-width:760px){ .foot-grid{grid-template-columns:1fr 1fr;} }
+  .foot-grid h5{font-family:'Space Grotesk';font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+  .foot-grid p{color:var(--muted);font-size:14px;max-width:240px;margin:14px 0 0;}
+  .foot-grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:14.5px;}
+  .foot-grid ul a:hover{color:var(--red);}
+  .foot-bottom{
+    border-top:1px solid var(--line);padding:24px 0 32px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-size:13.5px;color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html" aria-label="Ralia home">
+      <img src="Ralia Logo.jpeg" alt="Ralia Logo" style="width: 30px; height: 30px; object-fit: contain; margin-right: 10px; display:inline-block; vertical-align:middle;">
+      <span style="font-family:'Space Grotesk'; font-weight:700; font-size:20px; vertical-align:middle;">Ralia</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#how-it-works">How it Works</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="policy-header">
+    <div class="wrap">
+      <span class="eyebrow">Legal & Compliance</span>
+      <h1>Privacy Policy</h1>
+      <p>Effective Date: July 19, 2026</p>
+    </div>
+  </section>
+
+  <section class="policy-body">
+    <div class="wrap">
+      <div class="policy-grid">
+        <aside class="policy-sidebar">
+          <sticky>
+            <a href="#identification" class="sidebar-link">1. Entity Identification</a>
+            <a href="#data-collection" class="sidebar-link">2. Data Collection Matrix</a>
+            <a href="#legal-bases" class="sidebar-link">3. Legal Bases for Processing</a>
+            <a href="#data-sharing" class="sidebar-link">4. Sharing & Disclosures</a>
+            <a href="#global-rights" class="sidebar-link">5. Global User Rights</a>
+            <a href="#retention-transfers" class="sidebar-link">6. Retention & Transfers</a>
+          </sticky>
+        </aside>
+
+        <div class="policy-text">
+          <p>This Privacy Policy explains how Ralia collects, uses, processes, and protects personal data belonging to users across our platform architecture, including our website (ralia.co) and our mobile applications. Ralia is fully committed to compliance under global data protective frameworks, including the General Data Protection Regulation (GDPR), the United Kingdom General Data Protection Regulation (UK GDPR), and the California Consumer Privacy Act as amended by the California Privacy Rights Act (CCPA/CPRA).</p>
+
+          <h2 id="identification">1. Platform & Entity Identification</h2>
+          <p>Ralia operates as a modern decentralized word-of-mouth engagement ecosystem connecting promoters with campaign creators. Our technical architecture establishes two distinct governance capacities over personal data:</p>
+          <ul>
+            <li><strong>Data Controller Status:</strong> Ralia acts as the Data Controller for all core registration parameters, platform profiles, technical logs, device indicators, and account administrative settings.</li>
+            <li><strong>Data Processor Status:</strong> Ralia operates as a Data Processor when executing specific custom audience matches, target deployment configurations, and verification validations managed on behalf of institutional Campaign Creators.</li>
+          </ul>
+          <p>For any inquiries regarding data protection, automated profile parameters, or privacy rights, contact our Data Operations Desk directly at <strong>support@ralia.co</strong> or <strong>hello@ralia.co</strong>.</p>
+
+          <h2 id="data-collection">2. Comprehensive Data Collection Matrix</h2>
+          <p>Ralia records and processes explicit granular details to maintain accountability and trace campaign distribution vectors. The following matrix indexes all category data collection protocols:</p>
+          
+          <table class="legal-table">
+            <thead>
+              <tr>
+                <th>Data Category</th>
+                <th>Granular Data Points Collected</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Account Data</strong></td>
+                <td>Legal first and last name, verified primary email address, telephone contact indicators, account type configurations (Promoter vs. Campaign Creator/Organization/Ministry).</td>
+              </tr>
+              <tr>
+                <td><strong>Verification & Trust Data</strong></td>
+                <td>Vendor qualification validations, corporate or ecclesiastical registration documents, regulatory incorporation numbers, and government-issued identity verification markers.</td>
+              </tr>
+              <tr>
+                <td><strong>Financial & Payout Data</strong></td>
+                <td>Campaign wallet funding logs, external funding source records, clearing numbers, bank routing and account numbers designated for automated weekly Friday promoter payouts, and complete historical transaction ledgers.</td>
+              </tr>
+              <tr>
+                <td><strong>Core Engagement Data</strong></td>
+                <td>Campaign tracking matrices, system-generated cryptographic sharing links, smart discovery selections, user tagging data, and target completion uploads (including uploaded screenshots and engagement verification metrics).</td>
+              </tr>
+              <tr>
+                <td><strong>In-App Communication Logs</strong></td>
+                <td>Timestamps, systemic delivery indicators, application metadata, routing information, and network activity log parameters stemming from text-based messaging and call connectivity within the platform architecture.</td>
+              </tr>
+              <tr>
+                <td><strong>Device & Technical Data</strong></td>
+                <td>Precise and coarse real-time geolocation indicators (essential for localized physical community networks and geo-targeted event promotions), Internet Protocol (IP) address allocations, unique device identification values (UUID/IMEI), mobile operational environment variants, and localized analytical engine cookie profiles.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="legal-bases">3. Legal Bases for Processing (GDPR Compliance)</h2>
+          <p>Under European and United Kingdom regulatory standards, Ralia operates under defined legal bases depending on the context of processing activity:</p>
+          <ul>
+            <li><strong>Performance of a Contract:</strong> The processing of account indicators, transactional history, and wallet data is necessary to execute platform service terms, coordinate system verifications, and fulfill automated Friday payout allocations.</li>
+            <li><strong>Consent:</strong> Explicit, affirmative consent forms the regulatory foundation for accessing precise location trackers to deliver geo-fenced promotions or matching accounts through targeted automated smart discovery variables.</li>
+            <li><strong>Legal Obligation:</strong> Ralia processes personal metadata, verification markers, and banking records under mandatory statutory protocols concerning Anti-Money Laundering (AML) standards, Know Your Customer (KYC) directives, and global corporate tax accounting practices.</li>
+            <li><strong>Legitimate Interests:</strong> Ralia exercises data monitoring for security threat detection, network load balancing, fraud prevention matrices (including verifying unique user authenticity to block multi-profile creation anomalies), and cross-system product improvements.</li>
+          </ul>
+
+          <h2 id="data-sharing">4. Data Sharing & Third-Party Disclosures</h2>
+          <p>Ralia maintains a strict non-commercialization stance regarding user information. <strong>We do not sell, barter, lease, or monetize user personal data to third-party data brokers or marketing houses.</strong> Disclosures are restricted exclusively to operational fulfillment vectors:</p>
+          <h3>Operational Third-Party Sub-Processors</h3>
+          <p>Data transmission occurs with sandboxed service nodes critical to service stability: cloud computing architecture networks, payment processing gateways (coordinating funding workflows and Friday payouts), enterprise database systems, institutional identity verification providers, and diagnostic tracking telemetry engines.</p>
+          <h3>Campaign Creator Visibility Transparency</h3>
+          <p>When Promoters engage with specific initiatives, the respective institutional Campaign Creator/Organization receives access to aggregated metrics, system campaign links, and direct promotional verification proofs required to validate fulfillment performance prior to payout clearing.</p>
+
+          <h2 id="global-rights">5. Global User Rights</h2>
+          <p>Ralia implements comprehensive global access controls allowing all participants to exercise absolute rights over their stored digital footprint:</p>
+          <ul>
+            <li><strong>The Right to Access & Portability:</strong> Users may request complete, machine-readable extractions of all historical data logs linked to their platform identity.</li>
+            <li><strong>The Right to Rectification:</strong> Complete administrative access is available to alter or update inaccurate profile settings or institutional verification credentials instantly.</li>
+            <li><strong>The Right to Erasure ("Delete My Account"):</strong> Users maintain the right to permanently purge their profiles. Upon submission of an erasure directive, Ralia anonymizes or completely deletes all account structures, except for transactional history parameters legally required for corporate accounting audits.</li>
+            <li><strong>The Right to Restriction & Profiling Opt-Out:</strong> Users retain the absolute right to limit processing permissions, opt-out of automated smart discovery profiling matrices, or disable localized geo-tracking at any point through the mobile application configuration center.</li>
+          </ul>
+          <p>To exercise any of these compliance protocols, transmit a structured request directly to the compliance desk via <strong>support@ralia.co</strong>.</p>
+
+          <h2 id="retention-transfers">6. Data Retention & International Transfers</h2>
+          <p>Ralia maintains structural data minimisation standards. Personal records are retained exclusively throughout the operational lifespan of the active platform account configuration. Following an account deletion event, operational logs are deleted within thirty (30) days, except for financial transaction records, ledger proofs, and verification histories which are preserved for a period of seven (7) years to fulfill regulatory tax audit tracking mandates.</p>
+          <p>Because Ralia infrastructure relies on decentralized cloud arrays, personal data may be cross-routed internationally. To maintain maximum safety compliance, all international routing protocols out of the European Economic Area (EEA) or the United Kingdom are governed explicitly by Standard Contractual Clauses (SCCs) to ensure equivalent, unbreakable cross-border protective coverage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <img src="Ralia Logo.jpeg" alt="Ralia Logo" style="width: 30px; height: 30px; object-fit: contain; display:inline-block; vertical-align:middle;">
+          <span style="font-family:'Space Grotesk'; font-weight:700; font-size:18px; vertical-align:middle;">Ralia</span>
+        </a>
+        <p>People. Connections. Growth. A network of real people, spreading real word.</p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@ralia.co">hello@ralia.co</a></li>
+          <li><a href="mailto:support@ralia.co">support@ralia.co</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#" style="color:var(--red); font-weight:600;">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Ralia. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
