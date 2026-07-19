@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service - Ralia: People. Connections. Growth.</title>
+<link rel="icon" type="image/jpeg" href="Ralia Logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E5322A;
+    --red-dark:#B92620;
+    --green:#2FA84F;
+    --ink:#171412;
+    --paper:#FFFFFF;
+    --mist:#F7F5F2;
+    --line:#EAE6E1;
+    --muted:#6E6862;
+    --radius:14px;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4,.display{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--red);
+  }
+  
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.86);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--wrap);margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo img { width: 38px !important; height: 38px !important; margin-top: -4px; margin-bottom: -4px; }
+  .nav-links{display:flex;align-items:center;gap:34px;font-size:15px;font-weight:500;}
+  .nav-links a{color:var(--ink);opacity:.85;}
+  .nav-links a:hover{opacity:1;color:var(--red);}
+
+  /* ---------- Content ---------- */
+  .policy-header {
+    background: var(--mist);
+    padding: 80px 0 60px 0;
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  .policy-header h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-top: 12px;
+    color: var(--ink);
+  }
+  .policy-header p {
+    color: var(--muted);
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  .policy-body {
+    padding: 80px 0;
+  }
+  .policy-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+  }
+  @media (max-width: 900px) {
+    .policy-grid { grid-template-columns: 1fr; gap: 40px; }
+    .policy-sidebar { display: none; }
+  }
+  .policy-sidebar .sticky {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sidebar-link {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .sidebar-link:hover { color: var(--red); }
+  
+  .policy-text h2 {
+    font-size: 26px;
+    margin: 40px 0 16px 0;
+    color: var(--ink);
+    border-bottom: 2px dashed var(--line);
+    padding-bottom: 8px;
+  }
+  .policy-text h2:first-of-type { margin-top: 0; }
+  .policy-text h3 {
+    font-size: 18px;
+    margin: 24px 0 12px 0;
+    color: var(--ink);
+  }
+  .policy-text p {
+    color: var(--ink);
+    margin: 0 0 16px 0;
+    font-size: 15.5px;
+    opacity: 0.9;
+  }
+  .policy-text ul {
+    margin: 0 0 24px 0;
+    padding-left: 20px;
+  }
+  .policy-text li {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14.5px;
+  }
+  .legal-table th, .legal-table td {
+    border: 1px solid var(--line);
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .legal-table th {
+    background: var(--mist);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding-top:64px;background:#fff;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;}
+  @media (max-width:760px){ .foot-grid{grid-template-columns:1fr 1fr;} }
+  .foot-grid h5{font-family:'Space Grotesk';font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+  .foot-grid p{color:var(--muted);font-size:14px;max-width:240px;margin:14px 0 0;}
+  .foot-grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:14.5px;}
+  .foot-grid ul a:hover{color:var(--red);}
+  .foot-bottom{
+    border-top:1px solid var(--line);padding:24px 0 32px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-size:13.5px;color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html" aria-label="Ralia home">
+      <img src="Ralia Logo.jpeg" alt="Ralia Logo" style="width: 30px; height: 30px; object-fit: contain; margin-right: 10px; display:inline-block; vertical-align:middle;">
+      <span style="font-family:'Space Grotesk'; font-weight:700; font-size:20px; vertical-align:middle;">Ralia</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#how-it-works">How it Works</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="policy-header">
+    <div class="wrap">
+      <span class="eyebrow">Legal Agreement</span>
+      <h1>Terms of Service</h1>
+      <p>Effective Date: July 19, 2026</p>
+    </div>
+  </section>
+
+  <section class="policy-body">
+    <div class="wrap">
+      <div class="policy-grid">
+        <aside class="policy-sidebar">
+          <div class="sticky">
+            <a href="#parties" class="sidebar-link">1. Contractual Parties & Scope</a>
+            <a href="#eligibility" class="sidebar-link">2. User Eligibility</a>
+            <a href="#mechanics" class="sidebar-link">3. Platform Mechanics</a>
+            <a href="#ip-rights" class="sidebar-link">4. Intellectual Property</a>
+            <a href="#prohibited" class="sidebar-link">5. Prohibited Conduct</a>
+            <a href="#liability" class="sidebar-link">6. Liability & Indemnity</a>
+            <a href="#governing-law" class="sidebar-link">7. Governing Law</a>
+          </div>
+        </aside>
+
+        <div class="policy-text">
+          <p>Welcome to Ralia. These Terms of Service constitute a binding legal electronic agreement between you and Ralia regarding your use of our website (ralia.co) and mobile applications. Please read these terms carefully before accessing or using the platform.</p>
+
+          <h2 id="parties">1. Contractual Parties & Scope</h2>
+          <p>By creating an account as a Promoter or a Campaign Creator (including corporate entities, tech startups, event organizers, brands, businesses, and ministries or religious organizations), you explicitly declare full legal acceptance of these Terms. If you register on behalf of an organization, you affirm that you have the authority to legally bind that entity to this agreement.</p>
+          
+          <table class="legal-table">
+            <thead>
+              <tr>
+                <th>User Category</th>
+                <th>Core Binding Responsibility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Promoter</strong></td>
+                <td>Authentic campaign sharing, singular profile verification, and legitimate proof of engagement tasks.</td>
+              </tr>
+              <tr>
+                <td><strong>Campaign Creator</strong></td>
+                <td>Asset accuracy, wallet pre-funding, budget management, and compliance of public representations.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="eligibility">2. User Categories & Eligibility</h2>
+          <h3>2.1 Promoters</h3>
+          <p>Promoters must be at least 18 years old, or possess verifiable parental or guardian consent where local jurisdiction laws permit. You must maintain profile authenticity at all times. The creation, use, or management of multiple promoter profiles by a single individual to manipulate campaign distributions or multiply metrics is strictly prohibited and constitutes grounds for immediate account termination.</p>
+          
+          <h3>2.2 Campaign Creators</h3>
+          <p>Campaign Creators must possess the full corporate or legal capacity to bind their respective business, startup, or ministry entity. Campaign Creators are solely responsible for all uploaded promotional media, targeting metrics, campaign text parameters, budget assignments, and public representations deployed across the Ralia network.</p>
+
+          <h2 id="mechanics">3. Platform Mechanics, Wallets & Financial Ecosystem</h2>
+          <h3>3.1 Wallet Funding</h3>
+          <p>Campaign Creators must pre-fund their internal platform wallet before launching any live promotional campaigns. Funds loaded into the wallet are securely held and locked, designated exclusively for allocation toward targeted promoter achievements and programmatic completion metrics.</p>
+          
+          <h3>3.2 Verification Engine</h3>
+          <p>All activities—including promotional task submissions, link distributions, direct social shares, community networking records, and verification screenshots—are subjected to rigorous automated algorithms and manual tracking verification. Ralia retains the absolute discretion to approve, flag, or reject any task submission.</p>
+          
+          <h3>3.3 Friday Payout Schedule</h3>
+          <p>Promoters are eligible to receive automated balance payouts every single Friday. Payouts are strictly conditional upon promotional tasks being fully processed and cleared by Ralia's verification system prior to the closing window. Unverified or flagged engagement tasks will not qualify for distribution.</p>
+          
+          <h3>3.4 Fees & Disclaimers</h3>
+          <p>Ralia applies specific administrative platform service fees and clear withdrawal rules across transactional pools. Financial fraud, invalid or artificial click/share generation, software modifications, and structural transaction chargebacks are strictly banned.</p>
+
+          <h2 id="ip-rights">4. Intellectual Property & Asset Usage Rights</h2>
+          <p>Ralia grants Promoters a limited, revocable, non-transferable, and non-exclusive license to use active campaign promotional materials (including text copy, images, graphics, and tracking links) solely within the duration and defined scope of that specific campaign. Ralia retains absolute, exclusive ownership over all platform technology, interface components, smart discovery matching engines, custom optimization tracking algorithms, and corporate brand marks.</p>
+
+          <h2 id="prohibited">5. Acceptable Use, Prohibited Conduct & Termination</h2>
+          <p>Users must not under any circumstances utilize bots, coordinated click farms, automated scripts, or headless browser engagement mechanisms. You are prohibited from executing misleading, deceptive, or defamatory promotional placements, or distributing platform assets via systematic electronic spamming channels.</p>
+          <p>Ralia reserves the absolute right to freeze platform wallets, suspend access, or permanently terminate accounts for conduct violations, resulting in the immediate forfeiture of all accumulated or un-cleared balances.</p>
+
+          <h2 id="liability">6. Limitation of Liability, Indemnification & Global Scale</h2>
+          <p>Ralia operates as a standard network utility interface and is not liable for structural platform downtime, external telecommunications failures, API drops, or variations in individual campaign performance outcomes. You agree to fully indemnify and hold harmless Ralia, its executive teams, and developers from all legal claims, liabilities, damages, or costs arising out of a Campaign Creator's content or a Promoter's distribution behavior.</p>
+
+          <h2 id="governing-law">7. Governing Law & Dispute Resolution</h2>
+          <p>These Terms are governed by and construed in accordance with the laws of the Federal Republic of Nigeria, without regard to conflict of law principles.</p>
+          <p>Any dispute arising from this contract shall follow a mandatory path of initial good-faith corporate negotiation. If unresolved, it shall be settled by binding arbitration in Nigeria. For international users scaling onto the platform from outside Nigeria, disputes will be directed through international arbitration channels to ensure seamless, global compliance and cross-border legal enforcement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <img src="Ralia Logo.jpeg" alt="Ralia Logo" style="width: 30px; height: 30px; object-fit: contain; display:inline-block; vertical-align:middle;">
+          <span style="font-family:'Space Grotesk'; font-weight:700; font-size:18px; vertical-align:middle;">Ralia</span>
+        </a>
+        <p>People. Connections. Growth. A network of real people, spreading real word.</p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@ralia.co">hello@ralia.co</a></li>
+          <li><a href="mailto:support@ralia.co">support@ralia.co</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html" style="color:var(--red); font-weight:600;">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Ralia. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
