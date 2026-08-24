@@ -319,7 +319,7 @@
           <p>Complete the form below to submit your application directly to our hiring team.</p>
 
           <!-- FORMSFREE ACTION ENDPOINT FOR careers@ralia.co -->
-          <form action="https://formspree.io/f/careers@ralia.co" method="POST" enctype="multipart/form-data">
+          <form action="https://formspree.io/f/careers@ralia.co" method="POST">
             
             <input type="hidden" name="_subject" value="New Job Application: Full Stack / Mobile App Developer">
 
@@ -344,9 +344,12 @@
             </div>
 
             <div class="form-group">
-              <label for="resume">Attach Resume / CV (PDF or DOCX)</label>
-              <input type="file" id="resume" name="Resume" accept=".pdf,.doc,.docx" required>
-            </div>
+  <label for="resumeLink">CV / Resume Link (Google Drive, Dropbox, OneDrive)</label>
+  <input type="url" id="resumeLink" name="CV Link" placeholder="https://drive.google.com/file/d/..." required>
+  <small style="display:block; margin-top:4px; color:var(--muted); font-size:12px;">
+    Please ensure share settings are set to <strong>"Anyone with the link can view"</strong>.
+  </small>
+</div>
 
             <div class="form-group">
               <label for="coverNote">Cover Note / Remarks</label>
