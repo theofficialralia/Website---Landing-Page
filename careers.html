@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers at Ralia | People. Connections. Growth.</title>
+<link rel="icon" type="image/jpeg" href="Ralia Logo.jpeg">
+<meta name="description" content="Join the Ralia team and help us build real-world connection and growth networks across digital and physical communities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E5322A;
+    --red-dark:#B92620;
+    --green:#2FA84F;
+    --ink:#171412;
+    --paper:#FFFFFF;
+    --mist:#F7F5F2;
+    --line:#EAE6E1;
+    --muted:#6E6862;
+    --radius:14px;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--red);
+  }
+  .muted{color:var(--muted);}
+  section{padding:80px 0;}
+  @media (max-width:760px){ section{padding:48px 0;} }
+
+  /* ---------- Buttons ---------- */
+  @keyframes fluid-bounce {
+    0%, 100% { border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%; }
+    50% { border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; }
+  }
+  @keyframes float-arrow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 32px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    color: #fff !important;
+    background: linear-gradient(135deg, #E5322A 0%, #FF6B6B 50%, #E5322A 100%);
+    background-size: 200% auto;
+    box-shadow: 0 8px 24px rgba(229, 50, 42, 0.25), inset 0 4px 12px rgba(255, 255, 255, 0.3);
+    animation: fluid-bounce 4s ease-in-out infinite;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: nowrap;
+  }
+  .btn svg {
+    animation: float-arrow 2s ease-in-out infinite;
+    transition: transform 0.3s ease;
+  }
+  .btn:hover {
+    transform: scale(1.08) rotate(1deg);
+    background-position: right center;
+    box-shadow: 0 12px 28px rgba(229, 50, 42, 0.4), inset 0 2px 6px rgba(255, 255, 255, 0.5);
+  }
+
+  /* ---------- Logo & Nav ---------- */
+  .logo img { width: 38px !important; height: 38px !important; margin-top: -4px; margin-bottom: -4px; }
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.86);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--wrap);margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-links{display:flex;align-items:center;gap:34px;font-size:15px;font-weight:500;}
+  .nav-links a:not(.btn){color:var(--ink);opacity:.85;}
+  .nav-links a:not(.btn):hover{opacity:1;color:var(--red);}
+  .nav-links a.active{color:var(--red);font-weight:600;}
+
+  /* ---------- Job Hero Image Header ---------- */
+  .role-hero {
+    position: relative;
+    padding: 96px 0;
+    /* Overlay tint for maximum contrast */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('Red.png?v=2');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+  }
+  .role-hero-content {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .role-badge {
+    display: inline-block;
+    background: var(--red);
+    color: #FFFFFF;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  .role-hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: #FFFFFF;
+  }
+  .role-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .role-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* ---------- Layout Grid ---------- */
+  .role-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 48px;
+  }
+  @media (max-width: 900px) {
+    .role-grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+
+  /* ---------- Job Details Content ---------- */
+  .job-details h2 {
+    font-size: 24px;
+    margin: 32px 0 12px 0;
+    color: var(--ink);
+  }
+  .job-details h2:first-child { margin-top: 0; }
+  .job-details p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .job-details ul {
+    margin: 0 0 24px 0;
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  .job-details li { margin-bottom: 8px; }
+
+  /* ---------- Application Form Styling ---------- */
+  .apply-card {
+    background: #FFFFFF;
+    border: 3px solid var(--ink);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 6px 6px 0px var(--ink);
+    position: sticky;
+    top: 96px;
+  }
+  .apply-card h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+  .apply-card p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .form-group {
+    margin-bottom: 18px;
+  }
+  .form-group label {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 13.5px;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--line);
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--red);
+  }
+  .form-group input[type="file"] {
+    padding: 8px;
+    background: var(--mist);
+    cursor: pointer;
+  }
+  .submit-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 1px solid var(--line); padding: 48px 0; }
+  .foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html" aria-label="Ralia home">
+      <img src="Ralia Logo.jpeg" alt="Ralia Logo" style="width: 30px; height: 30px; object-fit: contain; margin-right: 10px;">
+      Ralia
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#how-it-works">How it Works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="careers.html" class="active">Careers</a>
+      <a href="index.html#get-started" class="btn">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO COVER WITH CUSTOM ROLE PHOTO BACKGROUND -->
+  <section class="role-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('Red.png?v=2');">
+    <div class="role-hero-content">
+      <span class="role-badge">Engineering & Product</span>
+      <h1>Full Stack / Mobile App Developer</h1>
+      <div class="role-meta">
+        <span>📍 Remote / Hybrid</span>
+        <span>⏱️ Full-time</span>
+        <span>💼 Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLE DETAILS & FORM SECTION -->
+  <section class="wrap">
+    <div class="role-grid">
+      
+      <!-- LEFT COLUMN: JOB SPECIFICATION -->
+      <div class="job-details">
+        <h2>About Ralia</h2>
+        <p>Ralia connects organisations, brands, products, and services with trusted promoters and influencers who spread the word through digital sharing, community networks, and real-world events.</p>
+
+        <h2>The Role</h2>
+        <p>We are seeking a highly motivated Full Stack / Mobile App Developer to build, enhance, and scale the digital infrastructure that powers the Ralia campaign matching and payout ecosystem.</p>
+
+        <h2>Key Responsibilities</h2>
+        <ul>
+          <li>Develop high-performance mobile and web application user interfaces.</li>
+          <li>Design and integrate secure APIs for user verification, wallet balances, and campaign delivery tracking.</li>
+          <li>Collaborate with product leads to ensure smooth, responsive end-user experiences across iOS and Android platforms.</li>
+          <li>Ensure web application responsiveness, reliability, and automated payout backend integrations.</li>
+        </ul>
+
+        <h2>Requirements</h2>
+        <ul>
+          <li>Proven experience building cross-platform mobile apps (Flutter, React Native, or Native iOS/Android).</li>
+          <li>Proficiency with full-stack web architectures, REST APIs, and modern JS frameworks.</li>
+          <li>Understanding of transaction security, database design, and real-time event processing.</li>
+          <li>Strong communication skills and independence in a fast-paced environment.</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT COLUMN: APPLICANT FORM CARD -->
+      <aside>
+        <div class="apply-card">
+          <h3>Apply for this Role</h3>
+          <p>Complete the form below to submit your application directly to our hiring team.</p>
+
+          <!-- FORMSFREE ACTION ENDPOINT FOR careers@ralia.co -->
+          <form action="https://formspree.io/f/careers@ralia.co" method="POST" enctype="multipart/form-data">
+            
+            <input type="hidden" name="_subject" value="New Job Application: Full Stack / Mobile App Developer">
+
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="Full Name" placeholder="e.g. Jane Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="Email" placeholder="you@domain.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="Phone Number" placeholder="+234..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="portfolio">Portfolio / GitHub Link</label>
+              <input type="url" id="portfolio" name="Portfolio Link" placeholder="https://github.com/..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="resume">Attach Resume / CV (PDF or DOCX)</label>
+              <input type="file" id="resume" name="Resume" accept=".pdf,.doc,.docx" required>
+            </div>
+
+            <div class="form-group">
+              <label for="coverNote">Cover Note / Remarks</label>
+              <textarea id="coverNote" name="Cover Note" rows="4" placeholder="Briefly tell us why you'd be a great fit for Ralia..."></textarea>
+            </div>
+
+            <button type="submit" class="btn submit-btn">
+              Submit Application
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <div>© 2026 Ralia Technologies. All rights reserved.</div>
+      <div><a href="index.html">Back to Main Site</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
