@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Insights & Stories from Ralia</title>
+<link rel="icon" type="image/jpeg" href="Ralia Logo.jpeg">
+<meta name="description" content="Read the latest insights, announcements, and strategies from The Ralia Team on community building, influencer networking, and growth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E5322A;
+    --red-dark:#B92620;
+    --ink:#171412;
+    --paper:#FFFFFF;
+    --mist:#F7F5F2;
+    --line:#EAE6E1;
+    --muted:#6E6862;
+    --radius:16px;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+  .muted{color:var(--muted);}
+  section{padding:60px 0;}
+
+  /* ---------- Buttons ---------- */
+  @keyframes fluid-bounce {
+    0%, 100% { border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%; }
+    50% { border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; }
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 28px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    color: #fff !important;
+    background: linear-gradient(135deg, #E5322A 0%, #FF6B6B 50%, #E5322A 100%);
+    background-size: 200% auto;
+    box-shadow: 0 8px 24px rgba(229, 50, 42, 0.25);
+    animation: fluid-bounce 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 28px rgba(229, 50, 42, 0.4);
+  }
+
+  /* ---------- Header / Nav ---------- */
+  .logo img { width: 30px !important; height: 30px !important; margin-right: 10px; }
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--wrap);margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{display:flex;align-items:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;}
+  .nav-links{display:flex;align-items:center;gap:30px;font-size:15px;font-weight:500;}
+  .nav-links a:not(.btn){color:var(--ink);opacity:.85;}
+  .nav-links a:not(.btn):hover{opacity:1;color:var(--red);}
+  .nav-links a.active{color:var(--red);font-weight:600;}
+
+  /* ---------- Blog Hero Header ---------- */
+  .blog-hero {
+    background: var(--mist);
+    padding: 72px 0 48px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .blog-hero h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 12px; }
+  .blog-hero p { font-size: 18px; color: var(--muted); max-width: 600px; }
+
+  /* ---------- Blog Grid Layout ---------- */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 36px;
+    margin-top: 20px;
+  }
+  .blog-card {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+  .blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+  }
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: var(--mist);
+  }
+  .card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .card-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .author-tag {
+    background: var(--mist);
+    color: var(--ink);
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .card-title {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .card-excerpt {
+    font-size: 14.5px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+  .read-more-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: var(--red);
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ---------- Full Article View ---------- */
+  #article-view {
+    display: none;
+    padding: 60px 0;
+  }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 32px;
+    cursor: pointer;
+  }
+  .back-btn:hover { color: var(--red); }
+  .article-header {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+  }
+  .article-title {
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 24px;
+  }
+  .featured-image-banner {
+    width: 100%;
+    max-width: 900px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin: 0 auto 40px auto;
+  }
+  .article-body-content {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 17.5px;
+    line-height: 1.8;
+    color: #2D2825;
+  }
+  .article-body-content p { margin-bottom: 24px; }
+  .article-body-content h2 { font-size: 26px; margin: 40px 0 16px 0; color: var(--ink); }
+  .article-body-content blockquote {
+    border-left: 4px solid var(--red);
+    padding-left: 20px;
+    margin: 32px 0;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 1px solid var(--line); padding: 48px 0; margin-top: 60px; }
+  .foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/" aria-label="Ralia home">
+      <img src="Ralia Logo.jpeg" alt="Ralia Logo">
+      Ralia
+    </a>
+    <nav class="nav-links">
+      <a href="/#how-it-works">How it Works</a>
+      <a href="/#faq">FAQ</a>
+      <a href="careers">Careers</a>
+      <a href="blog" class="active">Blog</a>
+      <a href="app" class="btn">Launch App</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HOMEPAGE GRID VIEW -->
+  <div id="blog-home-view">
+    <section class="blog-hero">
+      <div class="wrap">
+        <h1>Blog & Insights</h1>
+        <p>Strategies, product announcements, and stories on building high-trust promoter networks across Africa.</p>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div id="blog-grid-container" class="blog-grid">
+        <!-- JS dynamically populates all blog cards here -->
+      </div>
+    </section>
+  </div>
+
+  <!-- SINGLE ARTICLE FULL READING VIEW -->
+  <div id="article-view" class="wrap">
+    <div class="back-btn" onclick="showBlogHome()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to all posts
+    </div>
+
+    <article>
+      <div class="article-header">
+        <h1 id="art-title" class="article-title"></h1>
+        <div class="article-meta">
+          <span class="author-tag" id="art-author">The Ralia Team</span>
+          <span id="art-date"></span>
+        </div>
+      </div>
+
+      <img id="art-image" class="featured-image-banner" src="" alt="Featured Post Image">
+
+      <div id="art-content" class="article-body-content">
+        <!-- Full long writeup text loads here -->
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <div>© 2026 Ralia Technologies. All rights reserved.</div>
+      <div><a href="/">Back to Main Site</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===========================================================================
+   EASY GITHUB EDITING SECTION FOR NEW WRITE-UPS / ARTICLES
+   To add a new article: Copy an existing object below and edit inside the quotes!
+   =========================================================================== */
+
+const blogPosts = [
+  {
+    id: "building-real-world-promoter-networks",
+    title: "Building High-Trust Promoter Networks: Why Grassroots Engagement Beats Traditional Ads",
+    author: "The Ralia Team",
+    date: "August 24, 2026",
+    image: "Red.png?v=2", // Image file name or URL for this specific topic
+    excerpt: "Discover why personal word-of-mouth networks outperform digital display banner ads in driving authentic user acquisition across emerging markets.",
+    
+    // FULL WRITE-UP GOES INSIDE BACKTICKS BELOW:
+    content: `
+      <p>Digital advertising is facing an authenticity crisis. As online noise increases, consumers across markets are tuning out display ads, social media sponsored banners, and generic email campaigns. In high-trust consumer cultures, personal recommendations remain the single most powerful driver of real conversion.</p>
+      
+      <h2>The Shift to Peer-to-Peer Distribution</h2>
+      <p>At Ralia, we built our campaign infrastructure around a fundamental truth: people trust people, not anonymous brand banners. When an authentic promoter shares a product within their local community or social circle, engagement rates soar past standard online metrics.</p>
+      
+      <blockquote>"True viral growth happens when everyday promoters are empowered with transparent tools and instant reward settlements."</blockquote>
+      
+      <h2>Empowering the Next Generation of Promoters</h2>
+      <p>By combining secure digital wallet integrations with real-world verification, Ralia provides brands with direct access to verified promoters. Whether running digital micro-campaigns or field activations, our infrastructure ensures every interaction is measured, verified, and rewarded accurately.</p>
+      
+      <p>As we expand our reach across regional hubs, our focus remains unchanged—building scalable tools that convert real-world relationships into measurable commercial growth.</p>
+    `
+  },
+  {
+    id: "ralia-app-launch-announcement",
+    title: "Introducing Ralia 2.0: Automated Payouts & Enhanced Campaign Analytics",
+    author: "The Ralia Team",
+    date: "August 10, 2026",
+    image: "Red.png?v=2",
+    excerpt: "A complete look at the new Ralia release introducing instant automated payouts, custom campaign parameters, and real-time tracking.",
+    
+    content: `
+      <p>We are thrilled to officially unveil Ralia 2.0. This milestone release addresses key feedback from our growing partner ecosystem, delivering seamless payout operations and unprecedented transparency for brand managers.</p>
+      
+      <h2>What's New in This Release?</h2>
+      <p>Our core engineering team focused on three critical capabilities for this update:</p>
+      <ul>
+        <li><strong>Instant Payout Engine:</strong> Promoters receive completed task rewards directly into their configured digital wallets without manual delays.</li>
+        <li><strong>Real-Time Analytics Dashboard:</strong> Brand managers can monitor live campaign performance, tracking verified submissions second-by-second.</li>
+        <li><strong>Geo-Fenced Activations:</strong> Support for hyper-local campaigns that trigger based on verified physical event locations.</li>
+      </ul>
+      
+      <h2>Getting Started</h2>
+      <p>Existing partners can access these capabilities immediately from their campaign management center. New brands can launch their first distribution campaign in under five minutes by visiting the Ralia App.</p>
+    `
+  }
+];
+
+/* ===========================================================================
+   ROUTING & RENDERING LOGIC (NO NEED TO EDIT BELOW THIS LINE)
+   =========================================================================== */
+
+function renderBlogGrid() {
+  const container = document.getElementById('blog-grid-container');
+  container.innerHTML = blogPosts.map(post => `
+    <div class="blog-card" onclick="openArticle('${post.id}')">
+      <img src="${post.image}" alt="${post.title}" class="card-img">
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="author-tag">${post.author}</span>
+          <span>${post.date}</span>
+        </div>
+        <h2 class="card-title">${post.title}</h2>
+        <p class="card-excerpt">${post.excerpt}</p>
+        <span class="read-more-link">
+          Read full article
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function openArticle(postId) {
+  const post = blogPosts.find(p => p.id === postId);
+  if (!post) return;
+
+  document.getElementById('art-title').innerText = post.title;
+  document.getElementById('art-author').innerText = post.author;
+  document.getElementById('art-date').innerText = post.date;
+  document.getElementById('art-image').src = post.image;
+  document.getElementById('art-content').innerHTML = post.content;
+
+  document.getElementById('blog-home-view').style.display = 'none';
+  document.getElementById('article-view').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showBlogHome() {
+  document.getElementById('article-view').style.display = 'none';
+  document.getElementById('blog-home-view').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Initialise on load
+document.addEventListener('DOMContentLoaded', renderBlogGrid);
+</script>
+
+</body>
+</html>
