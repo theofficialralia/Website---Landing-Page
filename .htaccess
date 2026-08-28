@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# 1. Hide .html extension in browser address bar (Redirects ralia.co/page.html to ralia.co/page)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# 2. Map clean URL back to .html file internally
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*?)/?$ $1.html [NC,L]
