@@ -34,386 +34,528 @@
   h1,h2,h3,.display{
     font-family:'Space Grotesk',sans-serif;
     font-weight:600;
-    letter-spacing:-0.02em;
-    margin:0;
+    letter-spacing:-0.03em;
   }
   a{color:inherit;text-decoration:none;}
-  img,svg{display:block;max-width:100%;}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
-  .muted{color:var(--muted);}
-  section{padding:60px 0;}
 
-  /* ---------- Buttons ---------- */
-  @keyframes fluid-bounce {
-    0%, 100% { border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%; }
-    50% { border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; }
-  }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px 28px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    border: none;
-    cursor: pointer;
-    color: #fff !important;
-    background: linear-gradient(135deg, #E5322A 0%, #FF6B6B 50%, #E5322A 100%);
-    background-size: 200% auto;
-    box-shadow: 0 8px 24px rgba(229, 50, 42, 0.25);
-    animation: fluid-bounce 4s ease-in-out infinite;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-  }
-  .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 28px rgba(229, 50, 42, 0.4);
-  }
-
-  /* ---------- Header / Nav ---------- */
-  .logo img { width: 30px !important; height: 30px !important; margin-right: 10px; }
-  header.nav{
-    position:sticky;top:0;z-index:50;
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:100;
     background:rgba(255,255,255,0.92);
-    backdrop-filter:saturate(180%) blur(10px);
+    backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
-  .nav-inner{
-    max-width:var(--wrap);margin:0 auto;padding:16px 28px;
-    display:flex;align-items:center;justify-content:space-between;
+  .header-inner{
+    max-width:var(--wrap);
+    margin:0 auto;
+    padding:16px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
   }
-  .logo{display:flex;align-items:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;}
-  .nav-links{display:flex;align-items:center;gap:30px;font-size:15px;font-weight:500;}
-  .nav-links a:not(.btn){color:var(--ink);opacity:.85;}
-  .nav-links a:not(.btn):hover{opacity:1;color:var(--red);}
-  .nav-links a.active{color:var(--red);font-weight:600;}
-
-  /* ---------- Blog Hero Header ---------- */
-  .blog-hero {
-    background: var(--mist);
-    padding: 72px 0 48px 0;
-    border-bottom: 1px solid var(--line);
+  .brand-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:-0.03em;
   }
-  .blog-hero h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 12px; }
-  .blog-hero p { font-size: 18px; color: var(--muted); max-width: 600px; }
-
-  /* ---------- Blog Grid Layout ---------- */
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 36px;
-    margin-top: 20px;
-  }
-  .blog-card {
-    background: #FFFFFF;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-  }
-  .blog-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(0,0,0,0.08);
-  }
-  .card-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    background: var(--mist);
-  }
-  .card-body {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-  .card-meta {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .author-tag {
-    background: var(--mist);
-    color: var(--ink);
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 999px;
-  }
-  .card-title {
-    font-size: 20px;
-    line-height: 1.3;
-    margin-bottom: 12px;
-    color: var(--ink);
-  }
-  .card-excerpt {
-    font-size: 14.5px;
-    color: var(--muted);
-    margin-bottom: 20px;
-    flex-grow: 1;
-  }
-  .read-more-link {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    color: var(--red);
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+  .brand-logo img{
+    width:36px;
+    height:36px;
+    border-radius:8px;
+    object-fit:cover;
   }
 
-  /* ---------- Full Article View ---------- */
-  #article-view {
-    display: none;
-    padding: 60px 0;
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
   }
-  .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    color: var(--muted);
-    margin-bottom: 32px;
-    cursor: pointer;
+  .nav-link{
+    font-weight:500;
+    font-size:15px;
+    color:var(--muted);
+    transition:color 0.2s;
   }
-  .back-btn:hover { color: var(--red); }
-  .article-header {
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-  }
-  .article-title {
-    font-size: clamp(30px, 4vw, 44px);
-    line-height: 1.2;
-    margin-bottom: 20px;
-  }
-  .article-meta {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: 14px;
-    color: var(--muted);
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 24px;
-  }
-  .featured-image-banner {
-    width: 100%;
-    max-width: 900px;
-    height: 420px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    margin: 0 auto 40px auto;
-  }
-  .article-body-content {
-    max-width: 760px;
-    margin: 0 auto;
-    font-size: 17.5px;
-    line-height: 1.8;
-    color: #2D2825;
-  }
-  .article-body-content p { margin-bottom: 24px; }
-  .article-body-content h2 { font-size: 26px; margin: 40px 0 16px 0; color: var(--ink); }
-  .article-body-content blockquote {
-    border-left: 4px solid var(--red);
-    padding-left: 20px;
-    margin: 32px 0;
-    font-style: italic;
-    color: var(--muted);
+  .nav-link:hover, .nav-link.active{
+    color:var(--ink);
   }
 
-  /* ---------- Footer ---------- */
-  footer { border-top: 1px solid var(--line); padding: 48px 0; margin-top: 60px; }
-  .foot-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
-    font-size: 13.5px;
-    color: var(--muted);
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 20px;
+    border-radius:100px;
+    font-weight:600;
+    font-size:14px;
+    transition:all 0.2s;
+  }
+  .btn-primary{
+    background:var(--red);
+    color:#FFF;
+  }
+  .btn-primary:hover{
+    background:var(--red-dark);
+  }
+
+  .hero-blog{
+    padding:80px 24px 40px;
+    text-align:center;
+    background:var(--mist);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-blog h1{
+    font-size:48px;
+    margin:0 0 16px;
+    line-height:1.1;
+  }
+  .hero-blog p{
+    font-size:18px;
+    color:var(--muted);
+    max-width:600px;
+    margin:0 auto;
+  }
+
+  .blog-container{
+    max-width:800px;
+    margin:0 auto;
+    padding:60px 24px;
+  }
+
+  .blog-article{
+    background:var(--paper);
+    margin-bottom:80px;
+  }
+
+  .article-header{
+    margin-bottom:32px;
+  }
+  .article-meta{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:14px;
+    color:var(--muted);
+    margin-bottom:12px;
+  }
+  .article-tag{
+    background:rgba(229,50,42,0.1);
+    color:var(--red);
+    padding:4px 12px;
+    border-radius:100px;
+    font-weight:600;
+    font-size:12px;
+    text-transform:uppercase;
+  }
+  .article-title{
+    font-size:36px;
+    line-height:1.2;
+    margin:0 0 16px;
+  }
+
+  .article-body{
+    font-size:17px;
+    color:#2C2825;
+    line-height:1.7;
+  }
+  .article-body p{
+    margin-bottom:20px;
+  }
+  .article-body h2{
+    font-size:24px;
+    margin:36px 0 16px;
+    color:var(--ink);
+  }
+  .article-body ul, .article-body ol{
+    margin-bottom:24px;
+    padding-left:20px;
+  }
+  .article-body li{
+    margin-bottom:8px;
+  }
+  .article-body blockquote{
+    margin:28px 0;
+    padding:20px 24px;
+    background:var(--mist);
+    border-left:4px solid var(--red);
+    font-style:italic;
+    border-radius:0 var(--radius) var(--radius) 0;
+  }
+
+  .brand-highlight{
+    color:var(--red);
+    font-weight:700;
+  }
+
+  .blog-table-container{
+    overflow-x:auto;
+    margin:28px 0;
+  }
+  .blog-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:15px;
+    text-align:left;
+  }
+  .blog-table th, .blog-table td{
+    padding:12px 16px;
+    border:1px solid var(--line);
+  }
+  .blog-table th{
+    background:var(--mist);
+    font-weight:600;
+  }
+
+  .site-footer{
+    background:var(--ink);
+    color:#FFF;
+    padding:60px 24px 40px;
+    border-top:1px solid var(--line);
+  }
+  .footer-inner{
+    max-width:var(--wrap);
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  .footer-text{
+    color:#A09A93;
+    font-size:14px;
   }
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a class="logo" href="/" aria-label="Ralia home">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand-logo">
       <img src="Ralia Logo.jpeg" alt="Ralia Logo">
-      Ralia
+      <span><span class="brand-highlight">Ralia</span></span>
     </a>
     <nav class="nav-links">
-      <a href="/#how-it-works">How it Works</a>
-      <a href="/#faq">FAQ</a>
-      <a href="careers">Careers</a>
-      <a href="blog" class="active">Blog</a>
-      <a href="app" class="btn">Launch App</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="blog.html" class="nav-link active">Blog</a>
+      <a href="https://ralia.co" class="btn btn-primary">Join Ralia</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <!-- HOMEPAGE GRID VIEW -->
-  <div id="blog-home-view">
-    <section class="blog-hero">
-      <div class="wrap">
-        <h1>Blog & Insights</h1>
-        <p>Strategies, product announcements, and stories on building high-trust promoter networks across Africa.</p>
-      </div>
-    </section>
+<section class="hero-blog">
+  <h1>Insights & Stories</h1>
+  <p>Perspectives on digital growth, social proof, community activation, and modern strategy.</p>
+</section>
 
-    <section class="wrap">
-      <div id="blog-grid-container" class="blog-grid">
-        <!-- JS dynamically populates all blog cards here -->
-      </div>
-    </section>
-  </div>
+<main class="blog-container">
 
-  <!-- SINGLE ARTICLE FULL READING VIEW -->
-  <div id="article-view" class="wrap">
-    <div class="back-btn" onclick="showBlogHome()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-      Back to all posts
+  <!-- ARTICLE 1 -->
+  <article class="article-article">
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="article-tag">Strategy</span>
+        <span>•</span>
+        <span>By The <span class="brand-highlight">Ralia</span> Team</span>
+      </div>
+      <h1 class="article-title">How Can I Create an Effective Digital Marketing Strategy for My Business?</h1>
+    </header>
+
+    <div class="article-body">
+      <p>Most businesses don’t have a marketing problem.</p>
+      <p>They have a trust problem.</p>
+      <p>You can post every day.<br>
+      Run Facebook and Instagram ads.<br>
+      Send beautiful emails.<br>
+      Design professional graphics.<br>
+      Track every click.</p>
+      
+      <p>And still hear:</p>
+      <p>“Let me think about it.”</p>
+      <p>Why?</p>
+      <p>Because your customers already know that you want to sell to them.</p>
+      <p>The smarter question is:</p>
+      <p>Who do they trust enough to listen to?</p>
+      <p>That is where a modern digital marketing strategy changes.</p>
+      <p>Nielsen research has repeatedly found that recommendations from people consumers know rank among the most trusted forms of advertising. Its studies have reported figures ranging from 88% in 2021 to 92% in an earlier global study, well ahead of many conventional digital advertising formats.</p>
+      <p>So the winning strategy isn’t social media OR email OR advertising OR word of mouth.</p>
+      <p>It’s:</p>
+      <p>Build your digital infrastructure then put trust on top of it.</p>
+      <p>And that is exactly where platforms such as <span class="brand-highlight">Ralia</span> can fit into the marketing stack.</p>
+
+      <h2>The 5 Part Digital Marketing System</h2>
+      <p>A strong strategy can be reduced to five questions:</p>
+      <ol>
+        <li>Who are you trying to reach?</li>
+        <li>Where do they spend attention?</li>
+        <li>What will make them trust you?</li>
+        <li>What action do you want them to take?</li>
+        <li>How will you know it worked?</li>
+      </ol>
+      <p>Everything else supports these five decisions.</p>
+
+      <h2>1. Start With the Customer Not the Platform</h2>
+      <p>Don’t begin with:</p>
+      <p>“Should we advertise on Instagram?”</p>
+      <p>Begin with:</p>
+      <p>“Who is most likely to buy, and what would make them believe us?”</p>
+      <p>Build a simple customer profile:</p>
+      <ul>
+        <li><strong>Who:</strong> age, location, occupation or business type</li>
+        <li><strong>Problem:</strong> what are they struggling with?</li>
+        <li><strong>Desire:</strong> what outcome do they actually want?</li>
+        <li><strong>Objection:</strong> why might they hesitate?</li>
+        <li><strong>Trigger:</strong> what would make them act now?</li>
+        <li><strong>Trust source:</strong> whose opinion would influence them?</li>
+      </ul>
+      <p>That last question is becoming increasingly important.</p>
+      <p>A customer may ignore your company’s post.</p>
+      <p>But they may stop scrolling when someone they recognise or someone who appears genuinely relevant talks about your product.</p>
+
+      <h2>2. Build Your Social Media Strategy Around Attention &rarr; Trust &rarr; Action</h2>
+      <p>Posting consistently is not a strategy.</p>
+      <p>A content system is.</p>
+      <p>Use this simple framework:</p>
+
+      <p><strong>A. Attention</strong></p>
+      <p>Create content that earns the first three seconds.</p>
+      <p>Examples:</p>
+      <ul>
+        <li>“Your customers aren’t ignoring your business. They may simply not trust your marketing.”</li>
+        <li>“3 reasons Nigerian businesses spend money on ads and still struggle to convert.”</li>
+        <li>“If you’re getting views but no sales, check this first.”</li>
+      </ul>
+
+      <p><strong>B. Education</strong></p>
+      <p>Show customers that you understand their problem.</p>
+      <p>Use:</p>
+      <ul>
+        <li>How to content</li>
+        <li>Mistakes</li>
+        <li>Comparisons</li>
+        <li>Industry insights</li>
+        <li>Demonstrations</li>
+        <li>FAQs</li>
+        <li>Case studies</li>
+      </ul>
+
+      <p><strong>C. Proof</strong></p>
+      <p>This is where many businesses are weak.</p>
+      <p>Don’t simply say: “We’re the best.”</p>
+      <p>Show:</p>
+      <ul>
+        <li>Customer experiences</li>
+        <li>Testimonials</li>
+        <li>Results</li>
+        <li>Reviews</li>
+        <li>User generated content</li>
+        <li>Before and after outcomes</li>
+        <li>Real people using the product</li>
+      </ul>
+
+      <p><strong>D. Action</strong></p>
+      <p>Give the customer one obvious next step.</p>
+      <p>Buy. Book. Register. Message us. Visit the website.</p>
+      <p>Don’t make people figure out what to do next.</p>
+
+      <h2>The Missing Layer: Don’t Make Your Brand Do All the Talking</h2>
+      <p>Your company’s social media should explain the value.</p>
+      <p>But other people can make that value believable.</p>
+      <p>This is the distinction between:</p>
+      <p>Brand communication &rarr; “Our product is great.”</p>
+      <p>and</p>
+      <p>Peer recommendation &rarr; “I tried this, and here’s what happened.”</p>
+      <p>That second form of communication is powerful because it feels less like advertising and more like social proof.</p>
+      <p>This is why word of mouth deserves a deliberate place in your digital strategy, not merely something you hope happens naturally.</p>
+      <p>A platform such as <span class="brand-highlight">Ralia</span> is designed around this layer: connecting businesses and campaigns with real promoters and creators who can share, recommend and engage with offers and content.</p>
+      <p>Think of it as the layer between:</p>
+      <p>“We created the campaign.” and “People actually believe it.”</p>
+
+      <h2>3. The Best Digital Marketing Channels Depend on the Job</h2>
+      <p>Don’t ask: “Which channel is best?”</p>
+      <p>Ask: “Which channel is best for this stage of the customer journey?”</p>
+
+      <div class="blog-table-container">
+        <table class="blog-table">
+          <thead>
+            <tr>
+              <th>Channel</th>
+              <th>Best Used For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Instagram</td>
+              <td>Discovery, visual storytelling, social proof</td>
+            </tr>
+            <tr>
+              <td>Facebook</td>
+              <td>Reach, communities, retargeting</td>
+            </tr>
+            <tr>
+              <td>TikTok</td>
+              <td>Discovery, entertainment, creator led awareness</td>
+            </tr>
+            <tr>
+              <td>Google Search</td>
+              <td>Capturing existing demand</td>
+            </tr>
+            <tr>
+              <td>WhatsApp</td>
+              <td>Conversations, follow up and conversion</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>Retention and repeat purchases</td>
+            </tr>
+            <tr>
+              <td>Website / Landing Page</td>
+              <td>Converting attention into action</td>
+            </tr>
+            <tr>
+              <td>Influencers / Creators</td>
+              <td>Awareness and credibility</td>
+            </tr>
+            <tr>
+              <td>Peer promotion / word of mouth</td>
+              <td>Trust and recommendation</td>
+            </tr>
+            <tr>
+              <td><span class="brand-highlight">Ralia</span></td>
+              <td>Structured promoter and creator campaigns and measurable peer reach</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The strongest businesses combine these channels.</p>
+      <p>For example:</p>
+      <p><span class="brand-highlight">Ralia</span> or promoters &rarr; social discovery &rarr; landing page &rarr; purchase &rarr; email &rarr; repeat purchase</p>
+      <p>Instead of: Ad &rarr; website &rarr; hope.</p>
+
+      <h2>4. Digital Marketing Tools Nigerian Businesses Should Actually Know</h2>
+      <p>You don’t need 25 marketing platforms.</p>
+      <p>You need the right tools for the right jobs.</p>
+
+      <p><strong>Meta Business Suite</strong><br>For managing Facebook and Instagram content, messages and basic performance.</p>
+      <p><strong>Canva</strong><br>For quickly producing social graphics, presentations and marketing assets.</p>
+      <p><strong>Google Analytics</strong><br>For understanding what visitors do after they reach your website.</p>
+      <p><strong>Google Search Console</strong><br>For understanding how people discover your website through Google.</p>
+      <p><strong>Mailchimp</strong><br>For email campaigns, segmentation and customer retention.</p>
+      <p><strong>WhatsApp Business</strong><br>Particularly useful for customer conversations, enquiries and follow up.</p>
+      <p><strong><span class="brand-highlight">Ralia</span></strong><br>For the advocacy and peer promotion layer, helping businesses activate real promoters and creators to distribute campaigns and generate authentic engagement.</p>
+
+      <p>The important point is that <span class="brand-highlight">Ralia</span> isn’t meant to replace your existing marketing infrastructure.</p>
+      <p>Your analytics still matter. Your email still matters. Your social media still matters. Your advertising still matters.</p>
+      <p>But those tools primarily help you manage, distribute and measure marketing.</p>
+      <p>The additional question is: Who is helping other people talk about your brand?</p>
+
+      <h2>5. Build an Email Funnel That Keeps Customers</h2>
+      <p>Getting the sale is not the end of marketing.</p>
+      <p>It’s the beginning of retention.</p>
+      <p>A simple email sequence can look like this:</p>
+
+      <p><strong>Email 1: Welcome</strong><br>“You’re officially part of the community.” Set expectations and establish the relationship.</p>
+      <p><strong>Email 2: Value</strong><br>Give them something genuinely useful. Don’t immediately ask for another purchase.</p>
+      <p><strong>Email 3: Proof</strong><br>Show how other customers are getting value.</p>
+      <p><strong>Email 4: Offer</strong><br>Present the relevant product, service or promotion.</p>
+      <p><strong>Email 5: Follow up</strong><br>Address the hesitation: “Still considering it?” Then provide the information needed to make the decision.</p>
+      <p><strong>Email 6: Retention</strong><br>After purchase: “Here’s how to get more from what you bought.”</p>
+      <p>This is where many businesses stop thinking like marketers and start thinking like relationship builders.</p>
+
+      <h2>Your Full Customer Journey</h2>
+      <p>A practical digital funnel could therefore look like this:</p>
+      <p><strong>DISCOVER:</strong> Social media + search + promoters<br>&darr;<br>
+      <strong>TRUST:</strong> Reviews + UGC + peer recommendations + educational content<br>&darr;<br>
+      <strong>CONSIDER:</strong> Website + landing page + WhatsApp + email<br>&darr;<br>
+      <strong>CONVERT:</strong> Purchase / booking / registration<br>&darr;<br>
+      <strong>RETAIN:</strong> Email + WhatsApp + customer experience<br>&darr;<br>
+      <strong>ADVOCATE:</strong> Satisfied customers + promoters + creators<br>&darr;<br>
+      <strong>NEW CUSTOMERS:</strong> And the cycle starts again.</p>
+      <p>That’s a marketing system, not just a collection of posts.</p>
+
+      <h2>6. Measure What Actually Matters</h2>
+      <p>Likes can feel good. They don’t necessarily pay your bills.</p>
+      <p>Your KPIs should follow the customer journey.</p>
+      
+      <p><strong>Reach:</strong> Reach equals how many unique people saw your campaign. Useful for measuring awareness.</p>
+      <p><strong>Engagement:</strong> Track comments, shares, saves, clicks, video completion, and engagement rate. Shares and meaningful interactions show that people found something worth passing on.</p>
+      <p><strong>Conversion Rate:</strong> The metric that connects attention to action.<br>
+      <em>Conversion Rate = Conversions ÷ Relevant Visitors/Clicks × 100</em><br>
+      For example, if 1,000 people visit your landing page and 50 purchase, your conversion rate is 5%.</p>
+      <p><strong>Customer Acquisition Cost (CAC):</strong><br>
+      <em>CAC = Total acquisition spend ÷ Number of new customers</em><br>
+      If you spend ₦500,000 acquiring 100 customers, CAC = ₦5,000. Now compare that against the value those customers generate.</p>
+      <p><strong>Retention:</strong> Measure repeat purchase rate, customer retention rate, churn, repeat revenue, and customer lifetime value. Acquiring someone once is useful. Getting them to come back is a business.</p>
+
+      <h2>7. Add Trust to Your KPI Dashboard</h2>
+      <p>Here’s the KPI most marketing teams overlook: How much of our growth is coming from people talking about us?</p>
+      <p>Track:</p>
+      <ul>
+        <li>Promoter generated reach</li>
+        <li>Referral traffic</li>
+        <li>Shares</li>
+        <li>UGC created</li>
+        <li>Creator and promoter engagement</li>
+        <li>Referral conversions</li>
+        <li>Cost per acquisition from promoters</li>
+        <li>Revenue generated through advocacy</li>
+      </ul>
+      <p>This gives you something traditional advertising dashboards often don’t show clearly: whether customers are merely seeing your message or helping spread it.</p>
+
+      <h2>The Digital Marketing Strategy I’d Build Today</h2>
+      <p>For a Nigerian business starting or rebuilding its digital marketing engine:</p>
+      <ol>
+        <li>Define one high value customer segment.</li>
+        <li>Identify their biggest problem and buying trigger.</li>
+        <li>Create content around attention &rarr; education &rarr; proof &rarr; action.</li>
+        <li>Use Meta, Google, TikTok, WhatsApp or other relevant channels to reach them.</li>
+        <li>Build a landing page that converts attention into an identifiable lead or customer.</li>
+        <li>Use email or WhatsApp to nurture and retain customers.</li>
+        <li>Activate promoters and creators to generate peer to peer recommendations, UGC and social proof.</li>
+        <li>Track reach &rarr; engagement &rarr; conversion &rarr; CAC &rarr; retention &rarr; advocacy.</li>
+        <li>Double down on what produces customers, not merely what produces impressions.</li>
+      </ol>
+
+      <h2>The Real Question</h2>
+      <p>The internet has made it incredibly easy for every business to become a broadcaster.</p>
+      <p>Everyone can advertise. Everyone can create a beautiful Instagram page. Everyone can boost a post. Everyone can say: “We’re trusted.”</p>
+      <p>The competitive advantage increasingly comes from something harder to manufacture: other people being willing to talk about you.</p>
+      <p>Nielsen’s research has consistently placed personal recommendations among the most trusted forms of advertising, while its more recent work specifically recommends leaning into word of mouth rather than abandoning traditional advertising.</p>
+      <p>So don’t throw away your ads. Make them work harder.</p>
+      <p>Don’t abandon email. Use it to retain the customers you already earned.</p>
+      <p>Don’t stop posting. Make your content worth sharing.</p>
+      <p>And don’t leave word of mouth to chance. Build it into the system.</p>
+      <p>That is the opportunity <span class="brand-highlight">Ralia</span> is built around: giving businesses a structured way to activate real people, promoters and creators around campaigns rather than relying entirely on the brand itself to do the talking.</p>
+
+      <blockquote>
+        <p>Before your next campaign, ask yourself one question: Are you spending more money making people see your brand, or giving people a reason to recommend it? Because reach gets attention.</p>
+      </blockquote>
+      
+      <p style="text-align: center; margin-top: 32px;">
+        <a href="https://ralia.co" class="btn btn-primary" style="padding: 14px 28px; font-size: 16px;">Explore <span class="brand-highlight" style="color:#FFF;">Ralia</span></a>
+      </p>
+
     </div>
+  </article>
 
-    <article>
-      <div class="article-header">
-        <h1 id="art-title" class="article-title"></h1>
-        <div class="article-meta">
-          <span class="author-tag" id="art-author">The Ralia Team</span>
-          <span id="art-date"></span>
-        </div>
-      </div>
-
-      <img id="art-image" class="featured-image-banner" src="" alt="Featured Post Image">
-
-      <div id="art-content" class="article-body-content">
-        <!-- Full long writeup text loads here -->
-      </div>
-    </article>
-  </div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-bottom">
-      <div>© 2026 Ralia Technologies. All rights reserved.</div>
-      <div><a href="/">Back to Main Site</a></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="brand-logo">
+      <span><span class="brand-highlight">Ralia</span></span>
+    </div>
+    <div class="footer-text">
+      &copy; 2026 Ralia Inc. All rights reserved.
     </div>
   </div>
 </footer>
-
-<script>
-/* ===========================================================================
-   EASY GITHUB EDITING SECTION FOR NEW WRITE-UPS / ARTICLES
-   To add a new article: Copy an existing object below and edit inside the quotes!
-   =========================================================================== */
-
-const blogPosts = [
-  {
-    id: "building-real-world-promoter-networks",
-    title: "Building High-Trust Promoter Networks: Why Grassroots Engagement Beats Traditional Ads",
-    author: "The Ralia Team",
-    date: "August 24, 2026",
-    image: "Red.png?v=2", // Image file name or URL for this specific topic
-    excerpt: "Discover why personal word-of-mouth networks outperform digital display banner ads in driving authentic user acquisition across emerging markets.",
-    
-    // FULL WRITE-UP GOES INSIDE BACKTICKS BELOW:
-    content: `
-      <p>Digital advertising is facing an authenticity crisis. As online noise increases, consumers across markets are tuning out display ads, social media sponsored banners, and generic email campaigns. In high-trust consumer cultures, personal recommendations remain the single most powerful driver of real conversion.</p>
-      
-      <h2>The Shift to Peer-to-Peer Distribution</h2>
-      <p>At Ralia, we built our campaign infrastructure around a fundamental truth: people trust people, not anonymous brand banners. When an authentic promoter shares a product within their local community or social circle, engagement rates soar past standard online metrics.</p>
-      
-      <blockquote>"True viral growth happens when everyday promoters are empowered with transparent tools and instant reward settlements."</blockquote>
-      
-      <h2>Empowering the Next Generation of Promoters</h2>
-      <p>By combining secure digital wallet integrations with real-world verification, Ralia provides brands with direct access to verified promoters. Whether running digital micro-campaigns or field activations, our infrastructure ensures every interaction is measured, verified, and rewarded accurately.</p>
-      
-      <p>As we expand our reach across regional hubs, our focus remains unchanged—building scalable tools that convert real-world relationships into measurable commercial growth.</p>
-    `
-  },
-  {
-    id: "ralia-app-launch-announcement",
-    title: "Introducing Ralia 2.0: Automated Payouts & Enhanced Campaign Analytics",
-    author: "The Ralia Team",
-    date: "August 10, 2026",
-    image: "Red.png?v=2",
-    excerpt: "A complete look at the new Ralia release introducing instant automated payouts, custom campaign parameters, and real-time tracking.",
-    
-    content: `
-      <p>We are thrilled to officially unveil Ralia 2.0. This milestone release addresses key feedback from our growing partner ecosystem, delivering seamless payout operations and unprecedented transparency for brand managers.</p>
-      
-      <h2>What's New in This Release?</h2>
-      <p>Our core engineering team focused on three critical capabilities for this update:</p>
-      <ul>
-        <li><strong>Instant Payout Engine:</strong> Promoters receive completed task rewards directly into their configured digital wallets without manual delays.</li>
-        <li><strong>Real-Time Analytics Dashboard:</strong> Brand managers can monitor live campaign performance, tracking verified submissions second-by-second.</li>
-        <li><strong>Geo-Fenced Activations:</strong> Support for hyper-local campaigns that trigger based on verified physical event locations.</li>
-      </ul>
-      
-      <h2>Getting Started</h2>
-      <p>Existing partners can access these capabilities immediately from their campaign management center. New brands can launch their first distribution campaign in under five minutes by visiting the Ralia App.</p>
-    `
-  }
-];
-
-/* ===========================================================================
-   ROUTING & RENDERING LOGIC (NO NEED TO EDIT BELOW THIS LINE)
-   =========================================================================== */
-
-function renderBlogGrid() {
-  const container = document.getElementById('blog-grid-container');
-  container.innerHTML = blogPosts.map(post => `
-    <div class="blog-card" onclick="openArticle('${post.id}')">
-      <img src="${post.image}" alt="${post.title}" class="card-img">
-      <div class="card-body">
-        <div class="card-meta">
-          <span class="author-tag">${post.author}</span>
-          <span>${post.date}</span>
-        </div>
-        <h2 class="card-title">${post.title}</h2>
-        <p class="card-excerpt">${post.excerpt}</p>
-        <span class="read-more-link">
-          Read full article
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </span>
-      </div>
-    </div>
-  `).join('');
-}
-
-function openArticle(postId) {
-  const post = blogPosts.find(p => p.id === postId);
-  if (!post) return;
-
-  document.getElementById('art-title').innerText = post.title;
-  document.getElementById('art-author').innerText = post.author;
-  document.getElementById('art-date').innerText = post.date;
-  document.getElementById('art-image').src = post.image;
-  document.getElementById('art-content').innerHTML = post.content;
-
-  document.getElementById('blog-home-view').style.display = 'none';
-  document.getElementById('article-view').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function showBlogHome() {
-  document.getElementById('article-view').style.display = 'none';
-  document.getElementById('blog-home-view').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Initialise on load
-document.addEventListener('DOMContentLoaded', renderBlogGrid);
-</script>
 
 </body>
 </html>
