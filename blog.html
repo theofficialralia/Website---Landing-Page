@@ -1,492 +1,2783 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Blog | Insights & Stories from Ralia</title>
+
 <link rel="icon" type="image/jpeg" href="Ralia Logo.jpeg">
+
 <meta name="description" content="Read the latest insights, announcements, and strategies from The Ralia Team on community building, influencer networking, and growth.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
+
   :root{
+
     --red:#E5322A;
+
     --red-dark:#B92620;
+
     --ink:#171412;
+
     --paper:#FFFFFF;
+
     --mist:#F7F5F2;
+
     --line:#EAE6E1;
+
     --muted:#6E6862;
+
     --radius:16px;
+
     --wrap:1120px;
+
   }
+
   *{box-sizing:border-box;}
+
   html{scroll-behavior:smooth;}
+
   body{
+
     margin:0;
+
     background:var(--paper);
+
     color:var(--ink);
+
     font-family:'Inter',sans-serif;
+
     -webkit-font-smoothing:antialiased;
+
     line-height:1.6;
+
   }
+
   h1,h2,h3,.display{
+
     font-family:'Space Grotesk',sans-serif;
+
     font-weight:600;
+
     letter-spacing:-0.02em;
+
     margin:0;
+
   }
-  a{color:inherit;text-decoration:none;}
-  img,svg{display:block;max-width:100%;}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px;}
-  .muted{color:var(--muted);}
-  section{padding:60px 0;}
+
+  a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+  }
+
+  img,svg{
+
+    display:block;
+
+    max-width:100%;
+
+  }
+
+  .wrap{
+
+    max-width:var(--wrap);
+
+    margin:0 auto;
+
+    padding:0 28px;
+
+  }
+
+  .muted{
+
+    color:var(--muted);
+
+  }
+
+  section{
+
+    padding:60px 0;
+
+  }
 
   /* ---------- Buttons ---------- */
+
   @keyframes fluid-bounce {
-    0%, 100% { border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%; }
-    50% { border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; }
+
+    0%, 100% {
+
+      border-radius:60% 40% 60% 40% / 40% 60% 40% 60%;
+
+    }
+
+    50% {
+
+      border-radius:40% 60% 40% 60% / 60% 40% 60% 40%;
+
+    }
+
   }
+
   .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px 28px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    border: none;
-    cursor: pointer;
-    color: #fff !important;
-    background: linear-gradient(135deg, #E5322A 0%, #FF6B6B 50%, #E5322A 100%);
-    background-size: 200% auto;
-    box-shadow: 0 8px 24px rgba(229, 50, 42, 0.25);
-    animation: fluid-bounce 4s ease-in-out infinite;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:12px 28px;
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:#fff !important;
+
+    background:linear-gradient(
+
+      135deg,
+
+      #E5322A 0%,
+
+      #FF6B6B 50%,
+
+      #E5322A 100%
+
+    );
+
+    background-size:200% auto;
+
+    box-shadow:0 8px 24px rgba(229,50,42,0.25);
+
+    animation:fluid-bounce 4s ease-in-out infinite;
+
+    transition:all 0.3s ease;
+
+    white-space:nowrap;
+
   }
+
   .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 28px rgba(229, 50, 42, 0.4);
+
+    transform:scale(1.05);
+
+    box-shadow:0 12px 28px rgba(229,50,42,0.4);
+
   }
 
   /* ---------- Header / Nav ---------- */
-  .logo img { width: 30px !important; height: 30px !important; margin-right: 10px; }
+
+  .logo img {
+
+    width:30px !important;
+
+    height:30px !important;
+
+    margin-right:10px;
+
+  }
+
   header.nav{
-    position:sticky;top:0;z-index:50;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:50;
+
     background:rgba(255,255,255,0.92);
+
     backdrop-filter:saturate(180%) blur(10px);
+
     border-bottom:1px solid var(--line);
+
   }
+
   .nav-inner{
-    max-width:var(--wrap);margin:0 auto;padding:16px 28px;
-    display:flex;align-items:center;justify-content:space-between;
+
+    max-width:var(--wrap);
+
+    margin:0 auto;
+
+    padding:16px 28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
   }
-  .logo{display:flex;align-items:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;}
-  .nav-links{display:flex;align-items:center;gap:30px;font-size:15px;font-weight:500;}
-  .nav-links a:not(.btn){color:var(--ink);opacity:.85;}
-  .nav-links a:not(.btn):hover{opacity:1;color:var(--red);}
-  .nav-links a.active{color:var(--red);font-weight:600;}
+
+  .logo{
+
+    display:flex;
+
+    align-items:center;
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-weight:700;
+
+    font-size:20px;
+
+  }
+
+  .nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+  }
+
+  .nav-links a:not(.btn){
+
+    color:var(--ink);
+
+    opacity:.85;
+
+  }
+
+  .nav-links a:not(.btn):hover{
+
+    opacity:1;
+
+    color:var(--red);
+
+  }
+
+  .nav-links a.active{
+
+    color:var(--red);
+
+    font-weight:600;
+
+  }
 
   /* ---------- Blog Hero Header ---------- */
+
   .blog-hero {
-    background: var(--mist);
-    padding: 72px 0 48px 0;
-    border-bottom: 1px solid var(--line);
+
+    background:var(--mist);
+
+    padding:72px 0 48px 0;
+
+    border-bottom:1px solid var(--line);
+
   }
-  .blog-hero h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 12px; }
-  .blog-hero p { font-size: 18px; color: var(--muted); max-width: 600px; }
+
+  .blog-hero h1 {
+
+    font-size:clamp(32px,5vw,48px);
+
+    margin-bottom:12px;
+
+  }
+
+  .blog-hero p {
+
+    font-size:18px;
+
+    color:var(--muted);
+
+    max-width:600px;
+
+  }
 
   /* ---------- Blog Grid Layout ---------- */
+
   .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 36px;
-    margin-top: 20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+
+    gap:36px;
+
+    margin-top:20px;
+
   }
+
   .blog-card {
-    background: #FFFFFF;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
+
+    background:#FFFFFF;
+
+    border:1px solid var(--line);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    transition:transform 0.3s ease,box-shadow 0.3s ease;
+
+    cursor:pointer;
+
+    display:flex;
+
+    flex-direction:column;
+
   }
+
   .blog-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+
+    transform:translateY(-6px);
+
+    box-shadow:0 16px 32px rgba(0,0,0,0.08);
+
   }
+
   .card-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    background: var(--mist);
+
+    width:100%;
+
+    height:200px;
+
+    object-fit:cover;
+
+    background:var(--mist);
+
   }
+
   .card-body {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+
+    padding:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex-grow:1;
+
   }
+
   .card-meta {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+
+    font-size:13px;
+
+    color:var(--muted);
+
+    margin-bottom:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
   }
+
   .author-tag {
-    background: var(--mist);
-    color: var(--ink);
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 999px;
+
+    background:var(--mist);
+
+    color:var(--ink);
+
+    font-weight:600;
+
+    padding:3px 10px;
+
+    border-radius:999px;
+
   }
+
   .card-title {
-    font-size: 20px;
-    line-height: 1.3;
-    margin-bottom: 12px;
-    color: var(--ink);
+
+    font-size:20px;
+
+    line-height:1.3;
+
+    margin-bottom:12px;
+
+    color:var(--ink);
+
   }
+
   .card-excerpt {
-    font-size: 14.5px;
-    color: var(--muted);
-    margin-bottom: 20px;
-    flex-grow: 1;
+
+    font-size:14.5px;
+
+    color:var(--muted);
+
+    margin-bottom:20px;
+
+    flex-grow:1;
+
   }
+
   .read-more-link {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    color: var(--red);
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-weight:700;
+
+    color:var(--red);
+
+    font-size:14px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
   }
 
   /* ---------- Full Article View ---------- */
+
   #article-view {
-    display: none;
-    padding: 60px 0;
+
+    display:none;
+
+    padding:60px 0;
+
   }
+
   .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    color: var(--muted);
-    margin-bottom: 32px;
-    cursor: pointer;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-weight:600;
+
+    color:var(--muted);
+
+    margin-bottom:32px;
+
+    cursor:pointer;
+
   }
-  .back-btn:hover { color: var(--red); }
+
+  .back-btn:hover {
+
+    color:var(--red);
+
+  }
+
   .article-header {
-    max-width: 800px;
-    margin: 0 auto 40px auto;
+
+    max-width:800px;
+
+    margin:0 auto 40px auto;
+
   }
+
   .article-title {
-    font-size: clamp(30px, 4vw, 44px);
-    line-height: 1.2;
-    margin-bottom: 20px;
+
+    font-size:clamp(30px,4vw,44px);
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
   }
+
   .article-meta {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: 14px;
-    color: var(--muted);
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    font-size:14px;
+
+    color:var(--muted);
+
+    border-bottom:1px solid var(--line);
+
+    padding-bottom:24px;
+
   }
+
   .featured-image-banner {
-    width: 100%;
-    max-width: 900px;
-    height: 420px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    margin: 0 auto 40px auto;
+
+    width:100%;
+
+    max-width:900px;
+
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:var(--radius);
+
+    margin:0 auto 40px auto;
+
   }
+
   .article-body-content {
-    max-width: 760px;
-    margin: 0 auto;
-    font-size: 17.5px;
-    line-height: 1.8;
-    color: #2D2825;
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    font-size:17.5px;
+
+    line-height:1.8;
+
+    color:#2D2825;
+
   }
-  .article-body-content p { margin-bottom: 24px; }
-  .article-body-content h2 { font-size: 26px; margin: 40px 0 16px 0; color: var(--ink); }
+
+  .article-body-content p {
+
+    margin-bottom:24px;
+
+  }
+
+  .article-body-content h2 {
+
+    font-size:26px;
+
+    margin:40px 0 16px 0;
+
+    color:var(--ink);
+
+  }
+
+  .article-body-content ul {
+
+    margin:0 0 28px 0;
+
+    padding-left:24px;
+
+  }
+
+  .article-body-content li {
+
+    margin-bottom:10px;
+
+  }
+
   .article-body-content blockquote {
-    border-left: 4px solid var(--red);
-    padding-left: 20px;
-    margin: 32px 0;
-    font-style: italic;
-    color: var(--muted);
+
+    border-left:4px solid var(--red);
+
+    padding-left:20px;
+
+    margin:32px 0;
+
+    font-style:italic;
+
+    color:var(--muted);
+
+  }
+
+  .ralia-highlight {
+
+    color:var(--red);
+
+    font-weight:700;
+
+  }
+
+  .article-cta {
+
+    margin-top:48px;
+
+    padding:32px;
+
+    background:var(--mist);
+
+    border-radius:var(--radius);
+
+    border:1px solid var(--line);
+
+  }
+
+  .article-cta h2 {
+
+    margin-top:0;
+
   }
 
   /* ---------- Footer ---------- */
-  footer { border-top: 1px solid var(--line); padding: 48px 0; margin-top: 60px; }
-  .foot-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
-    font-size: 13.5px;
-    color: var(--muted);
+
+  footer {
+
+    border-top:1px solid var(--line);
+
+    padding:48px 0;
+
+    margin-top:60px;
+
   }
+
+  .foot-bottom {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    font-size:13.5px;
+
+    color:var(--muted);
+
+  }
+
+  /* ---------- Mobile ---------- */
+
+  @media(max-width:760px){
+
+    .nav-inner{
+
+      padding:14px 20px;
+
+    }
+
+    .nav-links{
+
+      gap:14px;
+
+      font-size:13px;
+
+    }
+
+    .nav-links a:nth-child(1),
+
+    .nav-links a:nth-child(2){
+
+      display:none;
+
+    }
+
+    .wrap{
+
+      padding:0 20px;
+
+    }
+
+    .blog-hero{
+
+      padding:56px 0 40px 0;
+
+    }
+
+    .blog-grid{
+
+      grid-template-columns:1fr;
+
+      gap:24px;
+
+    }
+
+    .featured-image-banner{
+
+      height:260px;
+
+    }
+
+    .article-body-content{
+
+      font-size:16.5px;
+
+    }
+
+    .article-cta{
+
+      padding:24px;
+
+    }
+
+  }
+
 </style>
+
 </head>
+
 <body>
 
 <header class="nav">
+
   <div class="nav-inner">
+
     <a class="logo" href="/" aria-label="Ralia home">
+
       <img src="Ralia Logo.jpeg" alt="Ralia Logo">
+
       Ralia
+
     </a>
+
     <nav class="nav-links">
+
       <a href="/#how-it-works">How it Works</a>
+
       <a href="/#faq">FAQ</a>
+
       <a href="careers">Careers</a>
+
       <a href="blog" class="active">Blog</a>
+
       <a href="app" class="btn">Launch App</a>
+
     </nav>
+
   </div>
+
 </header>
 
 <main>
+
   <!-- HOMEPAGE GRID VIEW -->
+
   <div id="blog-home-view">
+
     <section class="blog-hero">
+
       <div class="wrap">
+
         <h1>Blog & Insights</h1>
-        <p>Strategies, product announcements, and stories on building high-trust promoter networks across Africa.</p>
+
+        <p>
+
+          Strategies, product announcements, and stories on building
+
+          high trust promoter networks across Africa.
+
+        </p>
+
       </div>
+
     </section>
 
     <section class="wrap">
+
       <div id="blog-grid-container" class="blog-grid">
-        <!-- JS dynamically populates all blog cards here -->
+
+        <!-- JavaScript populates the blog card here -->
+
       </div>
+
     </section>
+
   </div>
 
   <!-- SINGLE ARTICLE FULL READING VIEW -->
+
   <div id="article-view" class="wrap">
+
     <div class="back-btn" onclick="showBlogHome()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+
+      <svg width="20" height="20" viewBox="0 0 24 24"
+
+           fill="none"
+
+           stroke="currentColor"
+
+           stroke-width="2.5">
+
+        <path d="M19 12H5"/>
+
+        <path d="M12 19l-7-7 7-7"/>
+
+      </svg>
+
       Back to all posts
+
     </div>
 
     <article>
+
       <div class="article-header">
+
         <h1 id="art-title" class="article-title"></h1>
+
         <div class="article-meta">
-          <span class="author-tag" id="art-author">The Ralia Team</span>
+
+          <span class="author-tag" id="art-author">
+
+            The Ralia Team
+
+          </span>
+
           <span id="art-date"></span>
+
         </div>
+
       </div>
 
-      <img id="art-image" class="featured-image-banner" src="" alt="Featured Post Image">
+      <img
+
+        id="art-image"
+
+        class="featured-image-banner"
+
+        src=""
+
+        alt="Featured Post Image"
+
+      >
 
       <div id="art-content" class="article-body-content">
-        <!-- Full long writeup text loads here -->
+
+        <!-- Full article loads here -->
+
       </div>
+
     </article>
+
   </div>
+
 </main>
 
 <footer>
+
   <div class="wrap">
+
     <div class="foot-bottom">
-      <div>© 2026 Ralia Technologies. All rights reserved.</div>
-      <div><a href="/">Back to Main Site</a></div>
+
+      <div>
+
+        © 2026 Ralia Technologies. All rights reserved.
+
+      </div>
+
+      <div>
+
+        <a href="/">Back to Main Site</a>
+
+      </div>
+
     </div>
+
   </div>
+
 </footer>
 
 <script>
+
 /* ===========================================================================
-   EASY GITHUB EDITING SECTION FOR NEW WRITE-UPS / ARTICLES
-   To add a new article: Copy an existing object below and edit inside the quotes!
+
+   EASY GITHUB EDITING SECTION FOR NEW WRITE UPS
+
+   To add a new article:
+
+   Copy an existing object below and edit the information inside it.
+
    =========================================================================== */
 
 const blogPosts = [
+
   {
+
     id: "building-real-world-promoter-networks",
+
     title: "How Can I Create an Effective Digital Marketing Strategy for My Business?",
+
     author: "The Ralia Team",
+
     date: "August 24, 2026",
+
     image: "Red.png?v=2",
-    excerpt: "Build a digital marketing system that reaches the right customers, earns trust, drives conversions, and turns satisfied customers into advocates.",
 
-    // FULL WRITE-UP GOES INSIDE BACKTICKS BELOW:
+    excerpt:
+
+      "Build a digital marketing system that reaches the right customers, earns trust, drives conversions, and turns satisfied customers into advocates.",
+
     content: `
-      <p>Most businesses do not have a marketing problem.</p>
 
-      <p><strong>They have a trust problem.</strong></p>
+      <p>
 
-      <p>You can post every day. Run social media ads. Send beautiful emails. Create professional graphics. Track every click.</p>
+        Most businesses do not have a marketing problem.
 
-      <p>And still hear:</p>
+      </p>
 
-      <blockquote>"Let me think about it."</blockquote>
+      <p>
 
-      <p>Why?</p>
+        <strong>They have a trust problem.</strong>
 
-      <p><strong>Because your customers already know you want to sell to them.</strong></p>
+      </p>
 
-      <p>The smarter question is:</p>
+      <p>
 
-      <p><strong>Who do they trust enough to listen to?</strong></p>
+        You can post every day. Run social media ads. Send beautiful emails.
 
-      <p>That is where a modern digital marketing strategy becomes more powerful.</p>
+        Create professional graphics. Track every click.
 
-      <p>Nielsen research has consistently found that personal recommendations from people consumers know rank among the most trusted forms of marketing, with global studies reporting figures in the 89% to 92% range. That trust is significantly stronger than many conventional digital advertising formats.</p>
+      </p>
 
-      <p>So the winning strategy is not social media versus email versus advertising versus word of mouth.</p>
+      <p>
 
-      <p><strong>It is a complete system that combines digital infrastructure with trusted human distribution.</strong></p>
+        And still hear:
 
-      <p>And this is where <a href="https://www.ralia.co" style="color:var(--red);font-weight:700;">Ralia</a> fits into the modern marketing stack.</p>
+      </p>
+
+      <blockquote>
+
+        "Let me think about it."
+
+      </blockquote>
+
+      <p>
+
+        Why?
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          Because your customers already know you want to sell to them.
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        The smarter question is:
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          Who do they trust enough to listen to?
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        That is where a modern digital marketing strategy becomes more powerful.
+
+      </p>
+
+      <p>
+
+        Nielsen research has consistently found that personal recommendations
+
+        from people consumers know rank among the most trusted forms of marketing,
+
+        with global studies reporting figures in the 89% to 92% range.
+
+        That trust is significantly stronger than many conventional digital
+
+        advertising formats.
+
+      </p>
+
+      <p>
+
+        So the winning strategy is not social media versus email versus
+
+        advertising versus word of mouth.
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          It is a complete system that combines digital infrastructure
+
+          with trusted human distribution.
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        And this is where
+
+        <a
+
+          href="https://www.ralia.co"
+
+          class="ralia-highlight"
+
+          target="_blank"
+
+          rel="noopener"
+
+        >Ralia</a>
+
+        fits into the modern marketing stack.
+
+      </p>
 
       <h2>The 5 Part Digital Marketing System</h2>
 
-      <p>A strong strategy can be reduced to five questions:</p>
+      <p>
+
+        A strong strategy can be reduced to five questions:
+
+      </p>
 
       <ul>
-        <li><strong>Who</strong> are you trying to reach?</li>
-        <li><strong>Where</strong> do they spend attention?</li>
-        <li><strong>What</strong> will make them trust you?</li>
-        <li><strong>What action</strong> do you want them to take?</li>
-        <li><strong>How</strong> will you know it worked?</li>
+
+        <li>
+
+          <strong>Who</strong> are you trying to reach?
+
+        </li>
+
+        <li>
+
+          <strong>Where</strong> do they spend attention?
+
+        </li>
+
+        <li>
+
+          <strong>What</strong> will make them trust you?
+
+        </li>
+
+        <li>
+
+          <strong>What action</strong> do you want them to take?
+
+        </li>
+
+        <li>
+
+          <strong>How</strong> will you know it worked?
+
+        </li>
+
       </ul>
 
-      <p>Everything else supports these decisions.</p>
+      <p>
+
+        Everything else supports these decisions.
+
+      </p>
 
       <h2>1. Start With the Customer</h2>
 
-      <p>Do not begin with:</p>
+      <p>
 
-      <p><strong>"Should we advertise on Instagram?"</strong></p>
+        Do not begin with:
 
-      <p>Begin with:</p>
+      </p>
 
-      <p><strong>"Who is most likely to buy, and what would make them believe us?"</strong></p>
+      <p>
 
-      <p>Build a simple customer profile:</p>
+        <strong>
+
+          "Should we advertise on Instagram?"
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        Begin with:
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          "Who is most likely to buy, and what would make them believe us?"
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        Build a simple customer profile:
+
+      </p>
 
       <ul>
-        <li><strong>Who:</strong> age, location, occupation or business type</li>
-        <li><strong>Problem:</strong> what are they struggling with?</li>
-        <li><strong>Desire:</strong> what outcome do they actually want?</li>
-        <li><strong>Objection:</strong> why might they hesitate?</li>
-        <li><strong>Trigger:</strong> what would make them act?</li>
-        <li><strong>Trust source:</strong> whose opinion would influence them?</li>
+
+        <li>
+
+          <strong>Who:</strong>
+
+          age, location, occupation or business type
+
+        </li>
+
+        <li>
+
+          <strong>Problem:</strong>
+
+          what are they struggling with?
+
+        </li>
+
+        <li>
+
+          <strong>Desire:</strong>
+
+          what outcome do they actually want?
+
+        </li>
+
+        <li>
+
+          <strong>Objection:</strong>
+
+          why might they hesitate?
+
+        </li>
+
+        <li>
+
+          <strong>Trigger:</strong>
+
+          what would make them act?
+
+        </li>
+
+        <li>
+
+          <strong>Trust source:</strong>
+
+          whose opinion would influence them?
+
+        </li>
+
       </ul>
 
-      <p>That last question matters more than many businesses realise.</p>
+      <p>
 
-      <p>A customer may ignore a company post.</p>
+        That last question matters more than many businesses realise.
 
-      <p>But they may stop when someone relevant shows them the product, explains it, demonstrates it, recommends it, or shares a genuine experience.</p>
+      </p>
+
+      <p>
+
+        A customer may ignore a company post.
+
+      </p>
+
+      <p>
+
+        But they may stop when someone relevant shows them the product,
+
+        explains it, demonstrates it, recommends it, or shares a genuine experience.
+
+      </p>
 
       <h2>2. Build Your Social Media Strategy Around Attention, Trust and Action</h2>
 
-      <p><strong>Posting consistently is not a strategy.</strong></p>
+      <p>
 
-      <p>A content system is.</p>
+        <strong>Posting consistently is not a strategy.</strong>
 
-      <p><strong>Attention</strong></p>
+      </p>
 
-      <p>Win the first few seconds.</p>
+      <p>
+
+        A content system is.
+
+      </p>
+
+      <p>
+
+        <strong>Attention</strong>
+
+      </p>
+
+      <p>
+
+        Win the first few seconds.
+
+      </p>
 
       <ul>
-        <li>"Your customers may not be ignoring you. They may simply not trust your marketing."</li>
-        <li>"Getting views but no sales? Check this first."</li>
-        <li>"Three reasons businesses spend money on ads and still struggle to convert."</li>
+
+        <li>
+
+          "Your customers may not be ignoring you. They may simply not trust your marketing."
+
+        </li>
+
+        <li>
+
+          "Getting views but no sales? Check this first."
+
+        </li>
+
+        <li>
+
+          "Three reasons businesses spend money on ads and still struggle to convert."
+
+        </li>
+
       </ul>
 
-      <p><strong>Education</strong></p>
+      <p>
 
-      <p>Show customers that you understand their problem.</p>
+        <strong>Education</strong>
+
+      </p>
+
+      <p>
+
+        Show customers that you understand their problem.
+
+      </p>
 
       <ul>
+
         <li>How to guides</li>
+
         <li>Mistakes to avoid</li>
+
         <li>Comparisons</li>
+
         <li>Industry insights</li>
+
         <li>Demonstrations</li>
+
         <li>Frequently asked questions</li>
+
         <li>Case studies</li>
+
       </ul>
 
-      <p><strong>Proof</strong></p>
+      <p>
 
-      <p>Do not simply say you are the best.</p>
+        <strong>Proof</strong>
 
-      <p>Show customers why they should believe you.</p>
+      </p>
+
+      <p>
+
+        Do not simply say you are the best.
+
+      </p>
+
+      <p>
+
+        Show customers why they should believe you.
+
+      </p>
 
       <ul>
+
         <li>Customer experiences</li>
+
         <li>Testimonials</li>
+
         <li>Reviews</li>
+
         <li>User generated content</li>
+
         <li>Real people using your product</li>
+
         <li>Results and case studies</li>
+
       </ul>
 
-      <p><strong>Action</strong></p>
+      <p>
 
-      <p>Give people one obvious next step.</p>
+        <strong>Action</strong>
 
-      <p>Buy. Book. Register. Message. Visit your website.</p>
+      </p>
 
-      <p><strong>Never make the customer figure out what to do next.</strong></p>
+      <p>
+
+        Give people one obvious next step.
+
+      </p>
+
+      <p>
+
+        Buy. Book. Register. Message. Visit your website.
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          Never make the customer figure out what to do next.
+
+        </strong>
+
+      </p>
 
       <h2>The Missing Layer: Get Other People Talking About You</h2>
 
-      <p>Your company should explain the value of your product.</p>
+      <p>
 
-      <p>But other people can help make that value believable.</p>
+        Your company should explain the value of your product.
 
-      <p><strong>Brand communication:</strong> "Our product is great."</p>
+      </p>
 
-      <p><strong>Peer recommendation:</strong> "Here is what this product is, what I saw, and why it may be useful to you."</p>
+      <p>
 
-      <p>That difference matters because people are naturally more receptive to information that comes through people rather than only through a company trying to sell.</p>
+        But other people can help make that value believable.
 
-      <p>This is why word of mouth should not be left to chance.</p>
+      </p>
 
-      <p><a href="https://www.ralia.co" style="color:var(--red);font-weight:700;">Ralia</a> gives businesses a structured way to activate promoters and creators around campaigns.</p>
+      <p>
 
-      <p>A business can bring its campaign content exactly as it is, then use promoters to distribute that content, speak about it through video or audio, complete specific tasks, create user generated content, and engage audiences around the campaign.</p>
+        <strong>Brand communication:</strong>
 
-      <p>Businesses can also use larger influencers when broader distribution is required.</p>
+        "Our product is great."
 
-      <p>And the model is not limited to digital activity. <a href="https://www.ralia.co" style="color:var(--red);font-weight:700;">Ralia</a> supports both digital and physical campaigns.</p>
+      </p>
 
-      <p><strong>Think of it as the layer that helps move a campaign from brand communication to human distribution.</strong></p>
+      <p>
+
+        <strong>Peer recommendation:</strong>
+
+        "Here is what this product is, what I saw, and why it may be useful to you."
+
+      </p>
+
+      <p>
+
+        That difference matters because people are naturally more receptive
+
+        to information that comes through people rather than only through
+
+        a company trying to sell.
+
+      </p>
+
+      <p>
+
+        This is why word of mouth should not be left to chance.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://www.ralia.co"
+
+          class="ralia-highlight"
+
+          target="_blank"
+
+          rel="noopener"
+
+        >Ralia</a>
+
+        gives businesses a structured way to activate promoters and creators
+
+        around campaigns.
+
+      </p>
+
+      <p>
+
+        A business can bring its campaign content exactly as it is, then use
+
+        promoters to distribute that content, speak about it through video
+
+        or audio, complete specific tasks, create user generated content,
+
+        and engage audiences around the campaign.
+
+      </p>
+
+      <p>
+
+        Businesses can also use larger influencers when broader distribution
+
+        is required.
+
+      </p>
+
+      <p>
+
+        And the model is not limited to digital activity.
+
+        <a
+
+          href="https://www.ralia.co"
+
+          class="ralia-highlight"
+
+          target="_blank"
+
+          rel="noopener"
+
+        >Ralia</a>
+
+        supports both digital and physical campaigns.
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          Think of it as the layer that helps move a campaign
+
+          from brand communication to human distribution.
+
+        </strong>
+
+      </p>
 
       <h2>3. Choose Digital Marketing Channels by the Job</h2>
 
-      <p>Do not ask:</p>
+      <p>
 
-      <p><strong>"Which channel is best?"</strong></p>
+        Do not ask:
 
-      <p>Ask:</p>
+      </p>
 
-      <p><strong>"Which channel is best for this stage of the customer journey?"</strong></p>
+      <p>
+
+        <strong>
+
+          "Which channel is best?"
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        Ask:
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          "Which channel is best for this stage of the customer journey?"
+
+        </strong>
+
+      </p>
 
       <ul>
-        <li><strong>Instagram:</strong> discovery, visual storytelling and social proof</li>
-        <li><strong>Facebook:</strong> reach, communities and retargeting</li>
-        <li><strong>TikTok:</strong> discovery, entertainment and creator led awareness</li>
-        <li><strong>Google Search:</strong> capturing existing demand</li>
-        <li><strong>WhatsApp:</strong> conversations, enquiries and follow up</li>
-        <li><strong>Email:</strong> retention and repeat purchases</li
+
+        <li>
+
+          <strong>Instagram:</strong>
+
+          discovery, visual storytelling and social proof
+
+        </li>
+
+        <li>
+
+          <strong>Facebook:</strong>
+
+          reach, communities and retargeting
+
+        </li>
+
+        <li>
+
+          <strong>TikTok:</strong>
+
+          discovery, entertainment and creator led awareness
+
+        </li>
+
+        <li>
+
+          <strong>Google Search:</strong>
+
+          capturing existing demand
+
+        </li>
+
+        <li>
+
+          <strong>WhatsApp:</strong>
+
+          conversations, enquiries and follow up
+
+        </li>
+
+        <li>
+
+          <strong>Email:</strong>
+
+          retention and repeat purchases
+
+        </li>
+
+        <li>
+
+          <strong>Website or Landing Page:</strong>
+
+          converting attention into action
+
+        </li>
+
+        <li>
+
+          <strong>Creators:</strong>
+
+          awareness and credibility
+
+        </li>
+
+        <li>
+
+          <strong>Peer promotion:</strong>
+
+          trust and recommendation
+
+        </li>
+
+        <li>
+
+          <strong>
+
+            <a
+
+              href="https://www.ralia.co"
+
+              class="ralia-highlight"
+
+              target="_blank"
+
+              rel="noopener"
+
+            >Ralia</a>
+
+          </strong>:
+
+          structured promoter and creator campaigns,
+
+          measurable peer reach and campaign activation
+
+        </li>
+
+      </ul>
+
+      <p>
+
+        The strongest businesses combine these channels.
+
+      </p>
+
+      <p>
+
+        For example:
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          Ralia and promoters → social discovery → landing page
+
+          → purchase → email → repeat purchase
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        Instead of:
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          Ad → website → hope.
+
+        </strong>
+
+      </p>
+
+      <h2>4. Digital Marketing Tools Nigerian Businesses Should Actually Know</h2>
+
+      <p>
+
+        You do not need 25 marketing platforms.
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          You need the right tool for the right job.
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        <strong>Meta Business Suite</strong>
+
+      </p>
+
+      <p>
+
+        For managing Facebook and Instagram content, messages and performance.
+
+      </p>
+
+      <p>
+
+        <strong>Canva</strong>
+
+      </p>
+
+      <p>
+
+        For quickly producing social graphics, presentations and marketing assets.
+
+      </p>
+
+      <p>
+
+        <strong>Google Analytics</strong>
+
+      </p>
+
+      <p>
+
+        For understanding what visitors do after they reach your website.
+
+      </p>
+
+      <p>
+
+        <strong>Google Search Console</strong>
+
+      </p>
+
+      <p>
+
+        For understanding how people discover your website through Google.
+
+      </p>
+
+      <p>
+
+        <strong>Mailchimp</strong>
+
+      </p>
+
+      <p>
+
+        For email campaigns, segmentation and customer retention.
+
+      </p>
+
+      <p>
+
+        <strong>WhatsApp Business</strong>
+
+      </p>
+
+      <p>
+
+        Particularly useful for customer conversations, enquiries and follow up.
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          <a
+
+            href="https://www.ralia.co"
+
+            class="ralia-highlight"
+
+            target="_blank"
+
+            rel="noopener"
+
+          >Ralia</a>
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        For the advocacy and peer promotion layer, helping businesses activate
+
+        real promoters and creators to distribute campaigns, create content,
+
+        complete campaign tasks and generate authentic engagement.
+
+      </p>
+
+      <p>
+
+        The important point is that
+
+        <a
+
+          href="https://www.ralia.co"
+
+          class="ralia-highlight"
+
+          target="_blank"
+
+          rel="noopener"
+
+        >Ralia</a>
+
+        is not meant to replace your existing marketing infrastructure.
+
+      </p>
+
+      <p>
+
+        Your analytics still matter.
+
+      </p>
+
+      <p>
+
+        Your email still matters.
+
+      </p>
+
+      <p>
+
+        Your social media still matters.
+
+      </p>
+
+      <p>
+
+        Your advertising still matters.
+
+      </p>
+
+      <p>
+
+        But those tools primarily help you manage, distribute and measure marketing.
+
+      </p>
+
+      <p>
+
+        The additional question is:
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          Who is helping other people talk about your brand?
+
+        </strong>
+
+      </p>
+
+      <h2>5. Build an Email Funnel That Keeps Customers</h2>
+
+      <p>
+
+        Getting the sale is not the end of marketing.
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          It is the beginning of retention.
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        A simple email sequence can look like this:
+
+      </p>
+
+      <ul>
+
+        <li>
+
+          <strong>Email 1: Welcome</strong><br>
+
+          You are officially part of the community.
+
+        </li>
+
+        <li>
+
+          <strong>Email 2: Value</strong><br>
+
+          Give them something genuinely useful.
+
+        </li>
+
+        <li>
+
+          <strong>Email 3: Proof</strong><br>
+
+          Show how other customers are getting value.
+
+        </li>
+
+        <li>
+
+          <strong>Email 4: Offer</strong><br>
+
+          Present the relevant product, service or promotion.
+
+        </li>
+
+        <li>
+
+          <strong>Email 5: Follow up</strong><br>
+
+          Address the hesitation and provide the information needed to decide.
+
+        </li>
+
+        <li>
+
+          <strong>Email 6: Retention</strong><br>
+
+          Help customers get more value from what they purchased.
+
+        </li>
+
+      </ul>
+
+      <p>
+
+        This is where many businesses stop thinking like marketers
+
+        and start thinking like relationship builders.
+
+      </p>
+
+      <h2>Your Full Customer Journey</h2>
+
+      <p>
+
+        <strong>DISCOVER</strong>
+
+      </p>
+
+      <p>
+
+        Social media + search + promoters
+
+      </p>
+
+      <p>
+
+        ↓
+
+      </p>
+
+      <p>
+
+        <strong>TRUST</strong>
+
+      </p>
+
+      <p>
+
+        Reviews + UGC + peer recommendations + educational content
+
+      </p>
+
+      <p>
+
+        ↓
+
+      </p>
+
+      <p>
+
+        <strong>CONSIDER</strong>
+
+      </p>
+
+      <p>
+
+        Website + landing page + WhatsApp + email
+
+      </p>
+
+      <p>
+
+        ↓
+
+      </p>
+
+      <p>
+
+        <strong>CONVERT</strong>
+
+      </p>
+
+      <p>
+
+        Purchase / booking / registration
+
+      </p>
+
+      <p>
+
+        ↓
+
+      </p>
+
+      <p>
+
+        <strong>RETAIN</strong>
+
+      </p>
+
+      <p>
+
+        Email + WhatsApp + customer experience
+
+      </p>
+
+      <p>
+
+        ↓
+
+      </p>
+
+      <p>
+
+        <strong>ADVOCATE</strong>
+
+      </p>
+
+      <p>
+
+        Satisfied customers + promoters + creators
+
+      </p>
+
+      <p>
+
+        ↓
+
+      </p>
+
+      <p>
+
+        <strong>NEW CUSTOMERS</strong>
+
+      </p>
+
+      <p>
+
+        And the cycle starts again.
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          That is a marketing system, not just a collection of posts.
+
+        </strong>
+
+      </p>
+
+      <h2>6. Measure What Actually Matters</h2>
+
+      <p>
+
+        Likes can feel good.
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          They do not necessarily pay your bills.
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        Your KPIs should follow the customer journey.
+
+      </p>
+
+      <p>
+
+        <strong>Reach</strong>
+
+      </p>
+
+      <p>
+
+        Reach measures how many unique people saw your campaign.
+
+        It is useful for measuring awareness.
+
+      </p>
+
+      <p>
+
+        <strong>Engagement</strong>
+
+      </p>
+
+      <ul>
+
+        <li>Comments</li>
+
+        <li>Shares</li>
+
+        <li>Saves</li>
+
+        <li>Clicks</li>
+
+        <li>Video completion</li>
+
+        <li>Engagement rate</li>
+
+      </ul>
+
+      <p>
+
+        Shares and meaningful interactions can be particularly useful signals
+
+        because they show that people found something worth passing on.
+
+      </p>
+
+      <p>
+
+        <strong>Conversion Rate</strong>
+
+      </p>
+
+      <p>
+
+        Conversion Rate = Conversions ÷ Relevant Visitors or Clicks × 100
+
+      </p>
+
+      <p>
+
+        For example:
+
+      </p>
+
+      <p>
+
+        1,000 people visit your landing page.
+
+      </p>
+
+      <p>
+
+        50 purchase.
+
+      </p>
+
+      <p>
+
+        <strong>Conversion rate = 5%.</strong>
+
+      </p>
+
+      <p>
+
+        <strong>Customer Acquisition Cost</strong>
+
+      </p>
+
+      <p>
+
+        CAC = Total acquisition spend ÷ Number of new customers
+
+      </p>
+
+      <p>
+
+        If you spend ₦500,000 acquiring 100 customers:
+
+      </p>
+
+      <p>
+
+        <strong>CAC = ₦5,000.</strong>
+
+      </p>
+
+      <p>
+
+        Now compare that against the value those customers generate.
+
+      </p>
+
+      <p>
+
+        <strong>Retention</strong>
+
+      </p>
+
+      <ul>
+
+        <li>Repeat purchase rate</li>
+
+        <li>Customer retention rate</li>
+
+        <li>Churn</li>
+
+        <li>Repeat revenue</li>
+
+        <li>Customer lifetime value</li>
+
+      </ul>
+
+      <p>
+
+        Because acquiring someone once is useful.
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          Getting them to come back is a business.
+
+        </strong>
+
+      </p>
+
+      <h2>7. Add Trust to Your KPI Dashboard</h2>
+
+      <p>
+
+        Here is the KPI many marketing teams overlook:
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          How much of our growth is coming from people talking about us?
+
+        </strong>
+
+      </p>
+
+      <ul>
+
+        <li>Promoter generated reach</li>
+
+        <li>Referral traffic</li>
+
+        <li>Shares</li>
+
+        <li>UGC created</li>
+
+        <li>Creator and promoter engagement</li>
+
+        <li>Referral conversions</li>
+
+        <li>Cost per acquisition from promoters</li>
+
+        <li>Revenue generated through advocacy</li>
+
+      </ul>
+
+      <p>
+
+        This gives you something traditional advertising dashboards
+
+        often do not show clearly:
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          whether customers are merely seeing your message
+
+          or helping spread it.
+
+        </strong>
+
+      </p>
+
+      <h2>The Digital Marketing Strategy I Would Build Today</h2>
+
+      <p>
+
+        For a Nigerian business starting or rebuilding its digital marketing engine:
+
+      </p>
+
+      <p>
+
+        <strong>STEP 1</strong>
+
+      </p>
+
+      <p>
+
+        Define one high value customer segment.
+
+      </p>
+
+      <p>
+
+        <strong>STEP 2</strong>
+
+      </p>
+
+      <p>
+
+        Identify their biggest problem and buying trigger.
+
+      </p>
+
+      <p>
+
+        <strong>STEP 3</strong>
+
+      </p>
+
+      <p>
+
+        Create content around attention, education, proof and action.
+
+      </p>
+
+      <p>
+
+        <strong>STEP 4</strong>
+
+      </p>
+
+      <p>
+
+        Use Meta, Google, TikTok, WhatsApp or other relevant channels
+
+        to reach them.
+
+      </p>
+
+      <p>
+
+        <strong>STEP 5</strong>
+
+      </p>
+
+      <p>
+
+        Build a landing page that converts attention into an identifiable
+
+        lead or customer.
+
+      </p>
+
+      <p>
+
+        <strong>STEP 6</strong>
+
+      </p>
+
+      <p>
+
+        Use email and WhatsApp to nurture and retain customers.
+
+      </p>
+
+      <p>
+
+        <strong>STEP 7</strong>
+
+      </p>
+
+      <p>
+
+        Activate promoters and creators to distribute campaign content,
+
+        create peer recommendations, produce UGC and generate engagement.
+
+      </p>
+
+      <p>
+
+        <strong>STEP 8</strong>
+
+      </p>
+
+      <p>
+
+        Track reach, engagement, conversion, CAC, retention and advocacy.
+
+      </p>
+
+      <p>
+
+        <strong>STEP 9</strong>
+
+      </p>
+
+      <p>
+
+        Double down on what produces customers, not merely what produces impressions.
+
+      </p>
+
+      <h2>The Real Question</h2>
+
+      <p>
+
+        The internet has made it incredibly easy for every business
+
+        to become a broadcaster.
+
+      </p>
+
+      <p>
+
+        Everyone can advertise.
+
+      </p>
+
+      <p>
+
+        Everyone can create a beautiful Instagram page.
+
+      </p>
+
+      <p>
+
+        Everyone can boost a post.
+
+      </p>
+
+      <p>
+
+        Everyone can say:
+
+      </p>
+
+      <blockquote>
+
+        "We are trusted."
+
+      </blockquote>
+
+      <p>
+
+        The competitive advantage increasingly comes from something
+
+        harder to manufacture:
+
+      </p>
+
+      <p>
+
+        <strong>
+
+          other people being willing to talk about you.
+
+        </strong>
+
+      </p>
+
+      <p>
+
+        Nielsen research has consistently placed personal recommendations
+
+        among the most trusted forms of advertising, while its broader work
+
+        highlights the importance of word of mouth alongside traditional advertising.
+
+      </p>
+
+      <p>
+
+        So do not throw away your ads.
+
+      </p>
+
+      <p>
+
+        <strong>Make them work harder.</strong>
+
+      </p>
+
+      <p>
+
+        Do not abandon email.
+
+      </p>
+
+      <p>
+
+        <strong>Use it to retain the customers you already earned.</strong>
+
+      </p>
+
+      <p>
+
+        Do not stop posting.
+
+      </p>
+
+      <p>
+
+        <strong>Make your content worth sharing.</strong>
+
+      </p>
+
+      <p>
+
+        And do not leave word of mouth to chance.
+
+      </p>
+
+      <p>
+
+        <strong>Build it into the system.</strong>
+
+      </p>
+
+      <div class="article-cta">
+
+        <h2>
+
+          Put Your Next Campaign in More Hands
+
+        </h2>
+
+        <p>
+
+          <a
+
+            href="https://www.ralia.co"
+
+            class="ralia-highlight"
+
+            target="_blank"
+
+            rel="noopener"
+
+          >Ralia</a>
+
+          helps businesses activate promoters and creators around campaigns,
+
+          distribute campaign content, support video and audio promotion,
+
+          complete campaign tasks, generate user generated content,
+
+          engage audiences and work with larger influencers when broader
+
+          distribution is needed.
+
+        </p>
+
+        <p>
+
+          From digital campaigns to physical campaigns, the goal is simple:
+
+          help businesses get their message into more relevant hands.
+
+        </p>
+
+        <p>
+
+          Before your next campaign, ask yourself:
+
+        </p>
+
+        <p>
+
+          <strong>
+
+            Are you spending more money making people see your brand,
+
+            or giving people a reason to recommend it?
+
+          </strong>
+
+        </p>
+
+        <p>
+
+          <a
+
+            href="https://www.ralia.co"
+
+            class="btn"
+
+            target="_blank"
+
+            rel="noopener"
+
+          >
+
+            Explore Ralia
+
+          </a>
+
+        </p>
+
+      </div>
+
+    `
+
+  }
+
+];
+
+/* ===========================================================================
+
+   RENDER BLOG CARDS
+
+   =========================================================================== */
+
+function renderBlogCards(){
+
+  const container =
+
+    document.getElementById("blog-grid-container");
+
+  if(!container){
+
+    return;
+
+  }
+
+  container.innerHTML = "";
+
+  blogPosts.forEach(function(post){
+
+    const card = document.createElement("article");
+
+    card.className = "blog-card";
+
+    card.onclick = function(){
+
+      openArticle(post.id);
+
+    };
+
+    card.innerHTML = `
+
+      <img
+
+        class="card-img"
+
+        src="${post.image}"
+
+        alt="${post.title}"
+
+      >
+
+      <div class="card-body">
+
+        <div class="card-meta">
+
+          <span class="author-tag">
+
+            ${post.author}
+
+          </span>
+
+          <span>
+
+            ${post.date}
+
+          </span>
+
+        </div>
+
+        <h2 class="card-title">
+
+          ${post.title}
+
+        </h2>
+
+        <p class="card-excerpt">
+
+          ${post.excerpt}
+
+        </p>
+
+        <span class="read-more-link">
+
+          Read article
+
+          <span>→</span>
+
+        </span>
+
+      </div>
+
+    `;
+
+    container.appendChild(card);
+
+  });
+
+}
+
+/* ===========================================================================
+
+   OPEN ARTICLE
+
+   =========================================================================== */
+
+function openArticle(id){
+
+  const post =
+
+    blogPosts.find(function(item){
+
+      return item.id === id;
+
+    });
+
+  if(!post){
+
+    return;
+
+  }
+
+  document.getElementById("blog-home-view").style.display = "none";
+
+  document.getElementById("article-view").style.display = "block";
+
+  document.getElementById("art-title").textContent =
+
+    post.title;
+
+  document.getElementById("art-author").textContent =
+
+    post.author;
+
+  document.getElementById("art-date").textContent =
+
+    post.date;
+
+  document.getElementById("art-image").src =
+
+    post.image;
+
+  document.getElementById("art-image").alt =
+
+    post.title;
+
+  document.getElementById("art-content").innerHTML =
+
+    post.content;
+
+  window.scrollTo({
+
+    top:0,
+
+    behavior:"smooth"
+
+  });
+
+}
+
+/* ===========================================================================
+
+   RETURN TO BLOG HOME
+
+   =========================================================================== */
+
+function showBlogHome(){
+
+  document.getElementById("article-view").style.display = "none";
+
+  document.getElementById("blog-home-view").style.display = "block";
+
+  window.scrollTo({
+
+    top:0,
+
+    behavior:"smooth"
+
+  });
+
+}
+
+/* ===========================================================================
+
+   INITIALISE
+
+   =========================================================================== */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  renderBlogCards();
+
+});
+
+</script>
+
+</body>
+
+</html>
