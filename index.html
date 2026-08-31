@@ -1096,17 +1096,26 @@ details.faq-item p {
         targetContent.style.display = 'block';
       }
     };
-  // Hide Ralia loader after the page has loaded
+ // Ralia Page Loader
+const raliaLoaderStart = performance.now();
+
 window.addEventListener('load', function () {
   const loader = document.getElementById('ralia-loader');
 
-  if (loader) {
+  if (!loader) return;
+
+  // Keep loader visible for at least 2.5 seconds
+  const minimumDisplayTime = 2500;
+  const elapsed = performance.now() - raliaLoaderStart;
+  const remainingTime = Math.max(0, minimumDisplayTime - elapsed);
+
+  setTimeout(function () {
     loader.classList.add('loader-hidden');
 
     setTimeout(function () {
       loader.remove();
-    }, 500);
-  }
+    }, 450);
+  }, remainingTime);
 });
   </script>
   <!-- Floating Feedback Trigger -->
