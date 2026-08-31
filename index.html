@@ -638,9 +638,79 @@ details.faq-item p {
   opacity: 1;
   transform: translateY(0);
 }
+  /* ---------- Ralia Page Loader ---------- */
+#ralia-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+#ralia-loader.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.ralia-loader-inner {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ralia-loader-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+.ralia-loader-ring {
+  position: absolute;
+  inset: 0;
+  border: 3px solid rgba(229, 50, 42, 0.12);
+  border-top-color: #E5322A;
+  border-right-color: #E5322A;
+  border-radius: 50%;
+  animation: ralia-loader-spin 0.9s linear infinite;
+}
+
+@keyframes ralia-loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ralia-loader-ring {
+    animation-duration: 2s;
+  }
+}
 </style>
 </head>
 <body>
+
+<!-- Ralia Page Loader -->
+<div id="ralia-loader" aria-label="Loading Ralia">
+  <div class="ralia-loader-inner">
+    <div class="ralia-loader-ring"></div>
+    <img
+      class="ralia-loader-logo"
+      src="Ralia Logo.jpeg"
+      alt="Ralia"
+    >
+  </div>
+</div>
+
+<header class="nav" id="top">
 
 <header class="nav" id="top">
   <div class="nav-inner">
@@ -1026,6 +1096,18 @@ details.faq-item p {
         targetContent.style.display = 'block';
       }
     };
+  // Hide Ralia loader after the page has loaded
+window.addEventListener('load', function () {
+  const loader = document.getElementById('ralia-loader');
+
+  if (loader) {
+    loader.classList.add('loader-hidden');
+
+    setTimeout(function () {
+      loader.remove();
+    }, 500);
+  }
+});
   </script>
   <!-- Floating Feedback Trigger -->
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSew2vHLnWY_lWFrmILmI8DLnmLepaDIFvDiXG7O5lgLq5ykzA/viewform?usp=publish-editor" target="_blank" class="floating-feedback" aria-label="Give Feedback">
