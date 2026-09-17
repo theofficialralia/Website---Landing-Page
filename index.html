@@ -110,21 +110,90 @@
   .logo img { width: 38px !important; height: 38px !important; margin-top: -4px; margin-bottom: -4px; }
   .logo svg{width:30px;height:30px;}
 
-  /* ---------- Nav ---------- */
-  header.nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(255,255,255,0.86);
-    backdrop-filter:saturate(180%) blur(10px);
-    border-bottom:1px solid var(--line);
+/* ---------- Hero Section with Background Image & Text Blur Card ---------- */
+  body {
+    background: #0d0b0a;
+    color: var(--paper);
   }
-  .nav-inner{
-    max-width:var(--wrap);margin:0 auto;padding:16px 28px;
-    display:flex;align-items:center;justify-content:space-between;
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url('your-image-filename.jpg') center/cover no-repeat; /* Make sure to match your background image filename */
+    padding: 60px 28px;
   }
-  .nav-links{display:flex;align-items:center;gap:34px;font-size:15px;font-weight:500;}
-  .nav-links a:not(.btn){color:var(--ink);opacity:.85;}
-  .nav-links a:not(.btn):hover{opacity:1;color:var(--red);}
-  .nav-toggle, .nav-burger{display:none;}
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 10, 9, 0.65);
+    z-index: 1;
+  }
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: var(--wrap);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .hero-logo img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+  }
+  .hero-logo span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+  .hero-content-box {
+    max-width: 620px;
+    background: rgba(15, 13, 12, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  .hero-title {
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+  .hero-title span {
+    color: var(--red);
+  }
+  .hero-desc {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 36px;
+  }
+  .hero-domain {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    margin-top: 24px;
+  }
+  @media (max-width: 768px) {
+    .hero-content-box { padding: 24px; }
+  }
 
   @media (max-width:780px){
     .nav-toggle{display:none;}
@@ -710,39 +779,37 @@ details.faq-item p {
   </div>
 </div>
 
-<header class="nav" id="top">
-
-<header class="nav" id="top">
-  <div class="nav-inner">
-    <a class="logo" href="/" aria-label="Ralia home">
-  <img src="Ralia Logo.jpeg" alt="Ralia Logo" style="width: 30px; height: 30px; object-fit: contain; margin-right: 10px;">
-  Ralia
-</a>
-      
-    </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-burger" aria-label="Open menu"><span></span></label>
- <nav class="nav-links">
-        <a href="javascript:void(0);" data-target="how-it-works">How it Works</a>
-        <a href="javascript:void(0);" data-target="faq">FAQ</a>
-        <a href="careers">Careers</a>
-        <a href="blog">Blog</a>
-      <a href="app" class="btn">Launch App <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin: 0;"><path d="M4.5 16.5c-1.5 1.5-2.5 3.5-2.5 5.5C4 22 6 21 7.5 19.5"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.2.2 2.4.6 3.5L8 10l4 4 5.5-5.4c1.1.4 2.3.6 3.5.6 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
-      </nav>
-  </div>
-</header>
-
 <main>
-
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <div>
-        <span class="eyebrow">People. Reach. Results.</span>
-        <h1>One person can<br>reach <em>thousands.</em></h1>
-        <p class="lede">Ralia connects organisations, brands, products and services with trusted promoters and renowned influencers who spread the word through digital sharing, community networks, and events.</p>
-              </div>
+  <section class="hero-section">
+    <div class="hero-container">
+      
+      <!-- Logo -->
+      <a href="#" class="hero-logo">
+        <img src="Ralia Logo.jpeg" alt="Ralia Logo" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover;">
+        <span>Ralia</span>
+      </a>
+
+      <!-- Content Box with Frosted Background Blur -->
+      <div class="hero-content-box">
+        <h1 class="hero-title">
+          Reach your next customers through the <span>Ralia network</span>.
+        </h1>
+        
+        <p class="hero-desc">
+          Ralia connects organizations, brands, products and services with trusted promoters and renowned influencers who spread the word through digital sharing and on-the-ground interactions.
+        </p>
+
+        <a href="#explore" class="btn">
+          EXPLORE THE NETWORK 
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+
+        <div class="hero-domain">www.ralia.co</div>
       </div>
+
+    </div>
+  </section>
     
     <!-- News Ticker Marquee Wrapper (Now sits at the very bottom edge) -->
     <div class="ticker-wrap">
